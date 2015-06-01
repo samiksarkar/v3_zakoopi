@@ -48,6 +48,20 @@ Router::defaultRouteClass('Route');
 Router::extensions(['json', 'xml']);
 
 
+Router::prefix('admin', function ($routes) {
+    // Because you are in the admin scope,
+    // you do not need to include the /admin prefix
+    // or the admin route element.
+    $routes->fallbacks('InflectedRoute');
+});
+Router::prefix('api', function ($routes) {
+    // Because you are in the admin scope,
+    // you do not need to include the /admin prefix
+    // or the admin route element.
+    $routes->fallbacks('InflectedRoute');
+    
+});
+
 
 Router::scope('/', function ($routes) {
 
@@ -88,4 +102,4 @@ Router::scope('/', function ($routes) {
  * Load all plugin routes.  See the Plugin documentation on
  * how to customize the loading of plugin routes.
  */
-Plugin::routes();
+//Plugin::routes();
