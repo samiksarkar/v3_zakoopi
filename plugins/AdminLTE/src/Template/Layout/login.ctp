@@ -4,7 +4,7 @@ $minifyCss = new Minify\CSS();
 $minifyJs = new Minify\JS();
 $minifyCss->add(file_get_contents("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css"));
 $minifyCss->add(file_get_contents('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.css'));
-$minifyCss->minify('bundleOne.css');
+//$minifyCss->minify('bundleOne.css');
 ?>
 <!DOCTYPE html>
 <html>
