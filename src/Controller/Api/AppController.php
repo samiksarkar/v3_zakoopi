@@ -29,7 +29,6 @@ class AppController extends Controller
 {
     // use \Crud\Controller\ControllerTrait;
 
-    public $theme = 'AdminLTE';
     public $components = [
 //        'Auth',
         'RequestHandler',
@@ -62,6 +61,9 @@ class AppController extends Controller
         if($this->request->param('prefix') == 'api' && !in_array($this->request->param('_ext'), ['json','xml'])){
             throw new \Cake\Network\Exception\NotFoundException('Page Not Found');
         }
+		
+		$this->theme = null;
+		
         $this->loadComponent('Flash');
         $this->loadComponent('Auth',[
             'authError' => 'Did you really think you are allowed to see that?',

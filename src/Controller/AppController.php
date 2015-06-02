@@ -29,7 +29,6 @@ class AppController extends Controller
 {
     // use \Crud\Controller\ControllerTrait;
 
-    public $theme = 'AdminLTE';
     public $components = [
 //        'Auth',
         'RequestHandler',
