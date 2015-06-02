@@ -81,11 +81,11 @@ task :deploy => :environment do
     # queue! %[sudo chmod 777 -R "#{deploy_to}/#{current_path}/logs"]
     # invoke :'rails:db_migrate'
     # invoke :'rails:assets_precompile'
-    
-    queue! %[sudo cp /var/www/live.php #{deploy_to}/#{shared_path}/config/live.php]
     invoke :'deploy:cleanup'
 
     to :launch do
+      queue! %[sudo cp /var/www/live.php #{deploy_to}/#{shared_path}/config/live.php]
+      queue! %[sudo chmod 777 -R #{deploy_to}/#{current_path}/plugins/AdminLTE/webroot/js_cache]
       # queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       # queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
       queue "sudo /etc/init.d/httpd restart"
