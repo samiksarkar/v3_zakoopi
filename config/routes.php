@@ -65,6 +65,9 @@ Router::prefix('api', function ($routes) {
 
 Router::scope('/', function ($routes) {
 
+
+    $routes->connect('/admin', ['controller' => 'Pages', 'action' => 'dashboard','prefix' => 'admin']);
+    
     $routes->resources('Articles');
 
     /**

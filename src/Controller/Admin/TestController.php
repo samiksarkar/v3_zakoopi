@@ -1,7 +1,7 @@
 <?php
 use App\Controller;
 
-use App\Controller\AppController;
+use App\Controller\Admin\AppController;
 
 /**
  * CakePHP TestController

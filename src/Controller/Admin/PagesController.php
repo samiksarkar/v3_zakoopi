@@ -62,4 +62,14 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+    
+    public function dashboard(){
+        $this->loadModel('Users');
+        $users = \Cake\ORM\TableRegistry::get('Users');
+        $this->set('usersCount',$users->find('all')->count());
+        $appDownloads = \Cake\ORM\TableRegistry::get('AppDownloads');
+        $this->set('appDownloadsCount',$appDownloads->find('all')->count());
+//        debug(sys_getloadavg());
+//        exit;
+    }
 }

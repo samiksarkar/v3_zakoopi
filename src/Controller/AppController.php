@@ -59,6 +59,9 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
+        if($this->request->param('prefix') == null && in_array($this->request->param('_ext'), ['json','xml'])){
+            throw new \Cake\Network\Exception\NotFoundException('Page Not Found');
+        }
         $this->loadComponent('Flash');
         $this->loadComponent('Auth',[
             'authError' => 'Did you really think you are allowed to see that?',
@@ -71,8 +74,7 @@ class AppController extends Controller
                 ]
             ]
         ]);
-        
-//        debug($_SERVER);
+//        debug($this->request);
 //        exit;
     }
     public function beforeFilter(\Cake\Event\Event $event) {

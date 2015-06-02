@@ -1,3 +1,7 @@
+<?php
+    use MatthiasMullie\Minify;
+    $this_dir = \Cake\Core\Plugin::path('AdminLTE') .'webroot';
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
     <head>
@@ -27,16 +31,40 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         <?php
-//        use MatthiasMullie\Minify;
-//        $minifyJs = new Minify();
-        $this->Html->script(['/plugins/jQuery/jQuery-2.1.4.min',
-            '/bootstrap/js/bootstrap.min',
-            'jquery.pjax',
-            '/plugins/slimScroll/jquery.slimscroll.min',
-            '/plugins/fastclick/fastclick.min',
-            '/dist/js/app',
-            '/dist/js/demo'
-        ])
+        if(true){
+            $minifyJs = new Minify\JS();
+            $minifyJs->add(
+                $this_dir.'/plugins/jQuery/jQuery-2.1.4.min.js',
+                $this_dir.'/bootstrap/js/bootstrap.js',
+//                $this_dir.'/js/jquery.pjax.js',
+                $this_dir.'/plugins/slimScroll/jquery.slimscroll.js',
+                $this_dir.'/plugins/fastclick/fastclick.js',
+                $this_dir.'/dist/js/app.js',
+                $this_dir.'/plugins/sparkline/jquery.sparkline.min.js',
+                $this_dir.'/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
+                $this_dir.'/plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
+                $this_dir.'/plugins/chartjs/Chart.min.js',
+                $this_dir.'/dist/js/pages/dashboard2.js',
+                $this_dir.'/dist/js/demo.js'
+            );
+            $rnd = '9ei';
+            $minifyJs->minify($this_dir.'/js_cache/bundleOne-'.$rnd.'.js');
+            echo $this->Html->script(['/js_cache/bundleOne-'.$rnd,'jquery.pjax']);
+        }else{
+            echo $this->Html->script(['/plugins/jQuery/jQuery-2.1.4.min',
+                '/bootstrap/js/bootstrap.min',
+                'jquery.pjax',
+                '/plugins/slimScroll/jquery.slimscroll.min',
+                '/plugins/fastclick/fastclick.min',
+                '/dist/js/app',
+                '/plugins/sparkline/jquery.sparkline.min',
+                '/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
+                '/plugins/jvectormap/jquery-jvectormap-world-mill-en',
+                '/plugins/chartjs/Chart.min',
+                '/dist/js/pages/dashboard2',
+                '/dist/js/demo'
+            ]);
+        }
         ?>
         <?= $this->fetch('meta') ?>
 <?= $this->fetch('css') ?>

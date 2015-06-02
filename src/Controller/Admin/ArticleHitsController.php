@@ -1,7 +1,7 @@
 <?php
 namespace namespace App\Controller\Admin;
 
-use App\Controller\AppController;
+use App\Controller\Admin\AppController;
 
 /**
  * ArticleHits Controller

@@ -644,14 +644,14 @@ function _init() {
       box.append(overlay);
 
       settings.onLoadStart.call(box);
-    }
+    };
 
     function done(box) {
       //Remove overlay and loading img
       box.find(overlay).remove();
 
       settings.onLoadDone.call(box);
-    }
+    };
 
   };
 
