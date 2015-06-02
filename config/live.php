@@ -321,6 +321,12 @@ return [
      * To use database sessions, load the SQL file located at config/Schema/sessions.sql
      */
     'Session' => [
-        'defaults' => 'php',
+        'defaults' => 'cake'
+        // 'ini' => [
+        	// 'session.cookie_path' => '/',
+        	// 'session.cookie_domain' => '.yourdomain.com',
+        	// 'session.cookie_secure' => false,
+        	// 'session.cookie_lifetime' => 1800
+        // ]
     ],
 ];
