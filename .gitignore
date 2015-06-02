@@ -4,5 +4,4 @@
 /logs/*
 /centos.pem
 /desktop.ini
-/config/deploy.rb
 /config/deploy/

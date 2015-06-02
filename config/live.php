@@ -220,7 +220,7 @@ return [
              */
             //'port' => 'nonstandard_port_number',
             'username' => 'root',
-            'password' => '',
+            'password' => 'ALinux@zakoopi',
             'database' => 'zakoopi_new',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
