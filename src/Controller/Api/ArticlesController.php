@@ -19,7 +19,7 @@ class ArticlesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Cities']
+            'contain' => ['Cities','Users','ArticleImages', 'ArticleHits', 'ArticleStores']
         ];
         $this->set('articles', $this->paginate($this->Articles));
         $this->set('_serialize', ['articles']);

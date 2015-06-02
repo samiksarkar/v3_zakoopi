@@ -33,5 +33,6 @@ class Article extends Entity
         'article_hits' => true,
         'article_images' => true,
         'article_stores' => true,
+        'users' => true
     ];
 }
