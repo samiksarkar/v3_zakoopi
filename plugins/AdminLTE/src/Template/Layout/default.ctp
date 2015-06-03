@@ -31,7 +31,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         <?php
-        if(true){
+        if(!\Cake\Core\Configure::read('debug')){
             $minifyJs = new Minify\JS();
             $minifyJs->add(
                 $this_dir.'/plugins/jQuery/jQuery-2.1.4.min.js',

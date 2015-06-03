@@ -68,7 +68,7 @@ class AppController extends Controller
         $this->loadComponent('Auth',[
             'authError' => 'Did you really think you are allowed to see that?',
             'authenticate' => [
-                'Form' => [
+                'Basic' => [
                     'fields' => [
                         'username' => 'email',
                         'password' => 'password'
