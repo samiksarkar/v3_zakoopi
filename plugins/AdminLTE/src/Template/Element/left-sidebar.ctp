@@ -4,10 +4,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= \Cake\Routing\Router::url('/admin_l_t_e/dist/img/user2-160x160.jpg') ?>" class="img-circle" alt="User Image" />
+                <img src="<?= \Cake\Routing\Router::url('/uploads/profile_pics/'.$authUser['img']) ?>" onerror="javascript: this.src = '/uploads/profile_pics/profile_img_3.jpg'" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Administrator</p>
+                <p><?= $authUser['first_name']." ".$authUser['last_name'] ?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -41,8 +41,8 @@
                     <span class="label label-primary pull-right">4</span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= \Cake\Routing\Router::url('/users'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
-                    <li><a href="<?= \Cake\Routing\Router::url('/users/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/users'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/users/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
                 </ul>
             </li>
 <!--            <li>
@@ -57,8 +57,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= \Cake\Routing\Router::url('/stores'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
-                    <li><a href="<?= \Cake\Routing\Router::url('/stores/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/stores'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/stores/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -68,8 +68,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= \Cake\Routing\Router::url('/stores'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
-                    <li><a href="<?= \Cake\Routing\Router::url('/stores/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/stores'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/stores/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -78,8 +78,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= \Cake\Routing\Router::url('/lookbooks'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
-                    <li><a href="<?= \Cake\Routing\Router::url('/lookbooks/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/lookbooks'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/lookbooks/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -88,8 +88,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= \Cake\Routing\Router::url('/offerings'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
-                    <li><a href="<?= \Cake\Routing\Router::url('/offerings/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/offerings'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/offerings/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -98,8 +98,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= \Cake\Routing\Router::url('/StoreOfferings'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
-                    <li><a href="<?= \Cake\Routing\Router::url('/StoreOfferings/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/StoreOfferings'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/StoreOfferings/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -108,8 +108,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= \Cake\Routing\Router::url('/StoreReviews'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
-                    <li><a href="<?= \Cake\Routing\Router::url('/StoreReviews/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/StoreReviews'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/StoreReviews/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
                 </ul>
             </li>
 <!--            <li>

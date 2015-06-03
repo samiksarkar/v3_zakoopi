@@ -45,7 +45,9 @@ $minifyCss->add(file_get_contents('https://code.ionicframework.com/ionicons/2.0.
     <body class="login-page">
         <div class="login-box">
             <div class="login-logo">
-                <a href="<?= Cake\Routing\Router::url('/') ?>"><b>Zakoopi</b>.com</a>
+                <a href="<?= Cake\Routing\Router::url('/') ?>">
+                    <?= $this->Html->image('logo-dark.png'); ?>
+                </a>
             </div><!-- /.login-logo -->
             <div class="login-box-body">
                 <?= $this->fetch('content'); ?>

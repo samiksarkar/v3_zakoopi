@@ -1278,7 +1278,7 @@ ul.banner-tab li.active a {
 }
 /* IMAGE CAPTIONS */
 
-.bx-wrapper .bx-caption {
+.bx-wrapper .dbx-caption {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -1288,7 +1288,7 @@ ul.banner-tab li.active a {
 	width: 100%;
 	border-radius:10px;
 }
-.bx-wrapper .bx-caption span {
+.bx-wrapper .dbx-caption span {
 	color: #ffffff;
 	display: block;
 	font-size: 16px;

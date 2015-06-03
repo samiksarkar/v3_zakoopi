@@ -1,7 +1,9 @@
 <?php
+
 use Cake\Core\Configure;
 use Cake\Error\Debugger;
 
+$this->layout = 'default';
 if (Configure::read('debug')):
     $this->layout = 'dev_error';
 
@@ -9,18 +11,18 @@ if (Configure::read('debug')):
     $this->assign('templateName', 'error500.ctp');
 
     $this->start('file');
-?>
-<?php if (!empty($error->queryString)) : ?>
-    <p class="notice">
-        <strong>SQL Query: </strong>
+    ?>
+        <?php if (!empty($error->queryString)) : ?>
+        <p class="notice">
+            <strong>SQL Query: </strong>
         <?= h($error->queryString) ?>
-    </p>
-<?php endif; ?>
-<?php if (!empty($error->params)) : ?>
+        </p>
+    <?php endif; ?>
+    <?php if (!empty($error->params)) : ?>
         <strong>SQL Query Params: </strong>
         <?= Debugger::dump($error->params) ?>
-<?php endif; ?>
-<?php
+    <?php endif; ?>
+    <?php
     echo $this->element('auto_table_warning');
 
     if (extension_loaded('xdebug')):
@@ -30,8 +32,17 @@ if (Configure::read('debug')):
     $this->end();
 endif;
 ?>
-<h2><?= __d('cake', 'An Internal Error Has Occurred') ?></h2>
-<p class="error">
-    <strong><?= __d('cake', 'Error') ?>: </strong>
-    <?= h($message) ?>
-</p>
+<div id="wrapper">
+<?= $this->element('header') ?>
+    <section>
+        <div class="container">
+            <div class="row">
+                <center>
+                    <h1>Opps! Something went wrong...</h1>
+                    <h3>500 An Internal Error Has Occurred</h3>
+                </center>
+            </div>
+        </div>
+    </section>
+</div>
+

@@ -47,6 +47,9 @@ $minifyJs = new Minify\JS();
             }
           </style>
         <![endif]-->
+        <script>
+            var zakoopiApp = {};
+        </script>
     </head>
     <body>
         <div>
@@ -100,23 +103,22 @@ $minifyJs = new Minify\JS();
             });
         </script>
         <script>
-            $('.bxslider').bxSlider({
+            
+            zakoopiApp.marketsSlider = $('#bx-slider-markets').bxSlider({
                 minSlides: 1,
                 maxSlides: 4,
                 slideWidth: 220,
-                captions: true,
+                captions: false,
                 slideMargin: 20,
                 responsive: true,
                 pager: false
 
             });
-        </script>
-        <script>
-            $('.bxslider1').bxSlider({
+            zakoopiApp.trendsSlider = $('#bx-slider-trends').bxSlider({
                 minSlides: 1,
                 maxSlides: 4,
                 slideWidth: 220,
-                captions: true,
+                captions: false,
                 slideMargin: 20,
                 responsive: true,
                 pager: false,

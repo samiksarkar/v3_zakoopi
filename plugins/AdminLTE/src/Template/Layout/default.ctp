@@ -36,6 +36,7 @@
             $minifyJs->add(
                 $this_dir.'/plugins/jQuery/jQuery-2.1.4.min.js',
                 $this_dir.'/bootstrap/js/bootstrap.js',
+                '',
 //                $this_dir.'/js/jquery.pjax.js',
                 $this_dir.'/plugins/slimScroll/jquery.slimscroll.js',
                 $this_dir.'/plugins/fastclick/fastclick.js',
@@ -43,15 +44,20 @@
                 $this_dir.'/plugins/sparkline/jquery.sparkline.min.js',
                 $this_dir.'/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
                 $this_dir.'/plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
-                $this_dir.'/plugins/chartjs/Chart.min.js',
-                $this_dir.'/dist/js/pages/dashboard2.js',
-                $this_dir.'/dist/js/demo.js'
+                $this_dir.'/plugins/chartjs/Chart.min.js'
             );
             $rnd = '9ei';
+            if($this->request->param('action') == 'dashboard'){
+                $minifyJs->add(
+                    $this_dir.'/dist/js/pages/dashboard2.js',
+                    $this_dir.'/dist/js/demo.js'
+                );
+                $rnd = '9eo';
+            }
             $minifyJs->minify($this_dir.'/js_cache/bundleOne-'.$rnd.'.js');
             echo $this->Html->script(['/js_cache/bundleOne-'.$rnd,'jquery.pjax']);
         }else{
-            echo $this->Html->script(['/plugins/jQuery/jQuery-2.1.4.min',
+            $jsfL = ['/plugins/jQuery/jQuery-2.1.4.min',
                 '/bootstrap/js/bootstrap.min',
                 'jquery.pjax',
                 '/plugins/slimScroll/jquery.slimscroll.min',
@@ -61,11 +67,15 @@
                 '/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
                 '/plugins/jvectormap/jquery-jvectormap-world-mill-en',
                 '/plugins/chartjs/Chart.min',
-                '/dist/js/pages/dashboard2',
-                '/dist/js/demo'
-            ]);
+            ];
+            if($this->request->param('action') == 'dashboard'){
+                $jsfL[] = '/dist/js/pages/dashboard2';
+                $jsfL[] = '/dist/js/demo';
+            }
+            echo $this->Html->script($jsfL);
         }
         ?>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/notifxi/0.2.2/notifxi.min.js"></script>
         <?= $this->fetch('meta') ?>
 <?= $this->fetch('css') ?>
 <?= $this->fetch('script') ?>
@@ -73,8 +83,9 @@
     </head>
     <body class="skin-blue sidebar-mini" id="pjax-container">
         <!-- Site wrapper -->
+        <div id="notifxi"></div> 
         <div class="wrapper">
-
+            
 <?= $this->element('header'); ?>
 
             <!-- =============================================== -->
@@ -132,12 +143,12 @@
 
         </div>
         <script type="text/javascript">
-            appZak();
-            AppAddons();
+            try{appZak();}catch(e){}
+            try{AppAddons();}catch(e){}
 
             $.pjax.defaults.timeout = 3600;
 
-            $(document).pjax('a', '#pjax-container');
+            $(document).pjax("a", '#pjax-container');
 
             $('#page-loader').height($(window).height());
             $('#page-loader').width($(window).width());
@@ -148,7 +159,7 @@
                 $('#page-loader').hide();
             });
             $(document).on('pjax:error', function (xhr, status, e) {
-                alert(e);
+                $("#notifxi").notifxi('q', 'Opps! it seems a slow connection...', 'warn');
             });
         </script>
     </body>

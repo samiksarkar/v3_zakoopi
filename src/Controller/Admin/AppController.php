@@ -83,6 +83,9 @@ class AppController extends Controller
         
         $this->Auth->allow(array('display'));
         
+        $authUser = $this->Auth->user();
+        $this->set('authUser', $authUser);
+        
         /* Layout Setup for TurboLinks */
         if($this->request->header('X-PJAX')){
             $this->layout = 'pjax_default';

@@ -62,4 +62,18 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+    
+    /**
+     * Websites Default Landing Page or you can say Homepage
+     * @return void 
+     */
+    
+    public function home(){
+        $this->set('isHome', true);
+        $markets = \Cake\ORM\TableRegistry::get('Markets');
+        $this->set('markets', $markets->find('all'));
+        
+        $trends = \Cake\ORM\TableRegistry::get('Trends');
+        $this->set('trends', $trends->find());
+    }
 }
