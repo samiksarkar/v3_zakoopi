@@ -22,7 +22,7 @@ class CitiesTable extends Table
     public function initialize(array $config)
     {
         $this->table('cities');
-        $this->displayField('id');
+        $this->displayField('city_name');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
         $this->hasMany('Articles', [

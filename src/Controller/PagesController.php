@@ -63,7 +63,12 @@ class PagesController extends AppController
         }
     }
     
-    /**
+    public function beforeFilter(\Cake\Event\Event $event) {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['home']);
+    }
+
+        /**
      * Websites Default Landing Page or you can say Homepage
      * @return void 
      */

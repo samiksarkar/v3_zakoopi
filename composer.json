@@ -13,7 +13,8 @@
         "friendsofcake/crud": "~4.0",
         "matthiasmullie/minify": "dev-master",
         "facebook/php-sdk-v4" : "4.0.*",
-		"google/apiclient": "1.0.*@beta"
+		"google/apiclient": "1.0.*@beta",
+        "cakemanager/cakephp-utils": "1.0.x-dev"
     },
     "require-dev": {
         "psy/psysh": "@stable",

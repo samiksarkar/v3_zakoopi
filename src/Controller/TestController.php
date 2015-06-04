@@ -19,8 +19,7 @@ class TestController extends AppController {
         exit;
     }
     public function img(){
-        Cake\Core\Configure::write('debug', true);
-        $img = new Imagick();
+        $img = new \Imagick();
         debug($img);
         exit;
     }

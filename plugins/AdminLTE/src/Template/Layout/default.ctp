@@ -34,6 +34,8 @@
         if(!\Cake\Core\Configure::read('debug')){
             $minifyJs = new Minify\JS();
             $minifyJs->add(
+                $this_dir.'/js/knockout-min.js',
+                $this_dir.'/js/knockout.mapping.js',
                 $this_dir.'/plugins/jQuery/jQuery-2.1.4.min.js',
                 $this_dir.'/bootstrap/js/bootstrap.js',
                 '',
@@ -57,7 +59,10 @@
             $minifyJs->minify($this_dir.'/js_cache/bundleOne-'.$rnd.'.js');
             echo $this->Html->script(['/js_cache/bundleOne-'.$rnd,'jquery.pjax']);
         }else{
-            $jsfL = ['/plugins/jQuery/jQuery-2.1.4.min',
+            $jsfL = [
+                'knockout-min',
+                'knockout.mapping',
+                '/plugins/jQuery/jQuery-2.1.4.min',
                 '/bootstrap/js/bootstrap.min',
                 'jquery.pjax',
                 '/plugins/slimScroll/jquery.slimscroll.min',

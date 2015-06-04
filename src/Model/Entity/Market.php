@@ -18,5 +18,7 @@ class Market extends Entity
         'city_id' => true,
         'market_name' => true,
         'city' => true,
+        'img' => true,
+        'picture' => true  //virtual Field for file
     ];
 }

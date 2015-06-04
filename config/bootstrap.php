@@ -212,7 +212,7 @@ DispatcherFactory::add('ControllerFactory');
 Type::build('datetime')->useLocaleParser();
 
 //Plugin::load('Crud', []);
-
+Plugin::load('Utils');
 Plugin::load('AdminLTE', ['bootstrap' => false, 'routes' => true]);
 
 

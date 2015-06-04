@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use App\Model\Entity\Market;
@@ -10,8 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Markets Model
  */
-class MarketsTable extends Table
-{
+class MarketsTable extends Table {
 
     /**
      * Initialize method
@@ -19,12 +19,26 @@ class MarketsTable extends Table
      * @param array $config The configuration for the Table.
      * @return void
      */
-    public function initialize(array $config)
-    {
+    public function initialize(array $config) {
         $this->table('markets');
         $this->displayField('id');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Utils.Uploadable', [
+            'picture' => [
+                'fileName' => '{field}.{extension}',
+                'path' => '{ROOT}{DS}{WEBROOT}{DS}uploads{DS}markets{DS}',
+                'removeFileOnUpdate' => true,
+                'removeFileOnDelete' => true,
+                'fields' => [
+                    'directory' => 'img',
+//                    'type' => 'img_type',
+//                    'size' => 'img_size',
+//                    'fileName' => 'img_name',
+//                    'filePath' => 'img_path'
+                ]
+            ],
+        ]);
         $this->belongsTo('Cities', [
             'foreignKey' => 'city_id',
             'joinType' => 'INNER'
@@ -37,14 +51,18 @@ class MarketsTable extends Table
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
-    public function validationDefault(Validator $validator)
-    {
+    public function validationDefault(Validator $validator) {
         $validator
-            ->allowEmpty('id', 'create');
-            
+                ->allowEmpty(
+                        'id', 
+                        'create',
+                        'img',
+                        'picture'  //virtual Field for file
+                        );
+
         $validator
-            ->requirePresence('market_name', 'create')
-            ->notEmpty('market_name');
+                ->requirePresence('market_name', 'create')
+                ->notEmpty('market_name');
 
         return $validator;
     }
@@ -56,9 +74,9 @@ class MarketsTable extends Table
      * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
      * @return \Cake\ORM\RulesChecker
      */
-    public function buildRules(RulesChecker $rules)
-    {
+    public function buildRules(RulesChecker $rules) {
         $rules->add($rules->existsIn(['city_id'], 'Cities'));
         return $rules;
     }
+
 }
