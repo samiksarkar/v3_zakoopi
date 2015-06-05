@@ -25,13 +25,36 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview">
-                <a href="#">
+            <li class="">
+                <a href="#" onclick="window.location = '/admin'">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>Mostly Used</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
                 <ul class="treeview-menu">
-                    <li><a href="/index.html"><i class="fa fa-circle-o"></i>Add Article</a></li>
-                    <li><a href="/index2.html"><i class="fa fa-circle-o"></i>New Store</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/articles/add'); ?>"><i class="fa fa-circle-o"></i>Add Article</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/stores/add'); ?>"><i class="fa fa-circle-o"></i>New Store</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>Lookbooks</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/lookbooks'); ?>"><i class="fa fa-circle-o"></i>List Lookbooks</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/lookbooks/add'); ?>"><i class="fa fa-circle-o"></i>New Lookbook</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>Markets</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/markets'); ?>"><i class="fa fa-circle-o"></i>List Markets</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/markets/add'); ?>"><i class="fa fa-circle-o"></i>New Market</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -64,12 +87,12 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-laptop"></i>
-                    <span>Articles</span>
+                    <span>Trends</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= \Cake\Routing\Router::url('/admin/stores'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
-                    <li><a href="<?= \Cake\Routing\Router::url('/admin/stores/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/trends'); ?>"><i class="fa fa-circle-o"></i>List All</a></li>
+                    <li><a href="<?= \Cake\Routing\Router::url('/admin/trends/add'); ?>""><i class="fa fa-circle-o"></i> Add New</a></li>
                 </ul>
             </li>
             <li class="treeview">

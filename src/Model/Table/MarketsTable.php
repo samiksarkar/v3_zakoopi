@@ -24,21 +24,26 @@ class MarketsTable extends Table {
         $this->displayField('id');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
-        $this->addBehavior('Utils.Uploadable', [
-            'picture' => [
-                'fileName' => '{field}.{extension}',
-                'path' => '{ROOT}{DS}{WEBROOT}{DS}uploads{DS}markets{DS}',
-                'removeFileOnUpdate' => true,
-                'removeFileOnDelete' => true,
-                'fields' => [
-                    'directory' => 'img',
-//                    'type' => 'img_type',
-//                    'size' => 'img_size',
-//                    'fileName' => 'img_name',
-//                    'filePath' => 'img_path'
-                ]
-            ],
+        $this->addBehavior('Upload',[
+            'testOpt' => [
+                'param1' => 1
+            ]
         ]);
+//        $this->addBehavior('Utils.Uploadable', [
+//            'picture' => [
+//                'fileName' => '{field}.{extension}',
+//                'path' => '{ROOT}{DS}{WEBROOT}{DS}uploads{DS}markets{DS}',
+//                'removeFileOnUpdate' => true,
+//                'removeFileOnDelete' => true,
+//                'fields' => [
+//                    'directory' => 'img',
+////                    'type' => 'img_type',
+////                    'size' => 'img_size',
+////                    'fileName' => 'img_name',
+////                    'filePath' => 'img_path'
+//                ]
+//            ],
+//        ]);
         $this->belongsTo('Cities', [
             'foreignKey' => 'city_id',
             'joinType' => 'INNER'
@@ -57,7 +62,7 @@ class MarketsTable extends Table {
                         'id', 
                         'create',
                         'img',
-                        'picture'  //virtual Field for file
+                        'file_img'  //virtual Field for file
                         );
 
         $validator

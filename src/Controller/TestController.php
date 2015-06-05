@@ -23,5 +23,12 @@ class TestController extends AppController {
         debug($img);
         exit;
     }
+    public function slug(){
+        $txt = "Top 5 markets & stores for shopinng in summer";
+        $slug = \Cake\Utility\Inflector::slug($txt);
+        debug($slug);
+        exit;
+                
+    }
 
 }

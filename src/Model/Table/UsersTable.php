@@ -22,7 +22,7 @@ class UsersTable extends Table
     public function initialize(array $config)
     {
         $this->table('users');
-        $this->displayField('id');
+        $this->displayField('first_name');
         $this->primaryKey('id');
         $this->hasMany('ArticleHits', [
             'foreignKey' => 'user_id'

@@ -59,65 +59,9 @@
                                 <div class="selct-cont selct-cont2 select-drop-icon">
                                     <select id="zk-loc-sr" name="">
                                         <option value="all">In All Areas</option>
-                                        <option value="Airport">Airport</option>
-                                        <option value="Alaknanda">Alaknanda</option>
-                                        <option value="Ansal Plaza">Ansal Plaza</option>
-                                        <option value="Chanakyapuri">Chanakyapuri</option>
-                                        <option value="Chandni Chowk">Chandni Chowk</option>
-                                        <option value="Connaught Place">Connaught Place</option>
-                                        <option value="Defence Colony">Defence Colony</option>
-                                        <option value="Delhi Cantt">Delhi Cantt</option>
-                                        <option value="Dilshad Garden">Dilshad Garden</option>
-                                        <option value="Dwarka">Dwarka</option>
-                                        <option value="Faridabad">Faridabad</option>
-                                        <option value="Gandhi Nagar">Gandhi Nagar</option>
-                                        <option value="Ghaziabad">Ghaziabad</option>
-                                        <option value="Greater Kailash">Greater Kailash</option>
-                                        <option value="Green Park">Green Park</option>
-                                        <option value="Gurgaon">Gurgaon</option>
-                                        <option value="Hari Nagar">Hari Nagar</option>
-                                        <option value="Hauz Khas">Hauz Khas</option>
-                                        <option value="Indirapuram">Indirapuram</option>
-                                        <option value="IP Extension">IP Extension</option>
-                                        <option value="Janakpuri">Janakpuri</option>
-                                        <option value="Kalindi Kunj">Kalindi Kunj</option>
-                                        <option value="Kamla Nagar">Kamla Nagar</option>
-                                        <option value="Karkardooma">Karkardooma</option>
-                                        <option value="Karol Bagh">Karol Bagh</option>
-                                        <option value="Kaushambi">Kaushambi</option>
-                                        <option value="Khan Market">Khan Market</option>
-                                        <option value="Kirti Nagar">Kirti Nagar</option>
-                                        <option value="Lajpat Nagar">Lajpat Nagar</option>
-                                        <option value="Lal Quarter">Lal Quarter</option>
-                                        <option value="Laxmi Nagar">Laxmi Nagar</option>
-                                        <option value="Madangir">Madangir</option>
-                                        <option value="Malviya Nagar">Malviya Nagar</option>
-                                        <option value="Mayur Vihar">Mayur Vihar</option>
-                                        <option value="Meharchand Market">Meharchand Market</option>
-                                        <option value="Model Town">Model Town</option>
-                                        <option value="Mukherjee Nagar">Mukherjee Nagar</option>
-                                        <option value="Naraina Vihar">Naraina Vihar</option>
-                                        <option value="Noida">Noida</option>
-                                        <option value="Paschim Vihar">Paschim Vihar</option>
-                                        <option value="Patel Nagar">Patel Nagar</option>
-                                        <option value="Pitampura">Pitampura</option>
-                                        <option value="Punjabi Bagh">Punjabi Bagh</option>
-                                        <option value="Rajouri Garden">Rajouri Garden</option>
-                                        <option value="Rani Bagh">Rani Bagh</option>
-                                        <option value="Rohini">Rohini</option>
-                                        <option value="Saket">Saket</option>
-                                        <option value="Sarojini Nagar">Sarojini Nagar</option>
-                                        <option value="Seelampur">Seelampur</option>
-                                        <option value="Shahdara">Shahdara</option>
-                                        <option value="Shahpur Jat">Shahpur Jat</option>
-                                        <option value="Shalimar Bagh">Shalimar Bagh</option>
-                                        <option value="South Extension">South Extension</option>
-                                        <option value="Subhash Nagar">Subhash Nagar</option>
-                                        <option value="Sukhdev Vihar">Sukhdev Vihar</option>
-                                        <option value="Tagore Garden">Tagore Garden</option>
-                                        <option value="Tilak Nagar">Tilak Nagar</option>
-                                        <option value="Vasant Kunj">Vasant Kunj</option>
-                                        <option value="Vikas Puri">Vikas Puri</option>
+                                        <?php foreach($markets as $market){ ?>
+                                        <option value="<?= $market->market_name ?>"><?= $market->market_name ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <input type="submit" name="">
@@ -193,65 +137,9 @@
                         <div class="selct-cont selct-cont2 select-drop-icon">
                             <select id="zk-loc-sr" name="">
                                 <option value="all">In All Areas</option>
-                                <option value="Airport">Airport</option>
-                                <option value="Alaknanda">Alaknanda</option>
-                                <option value="Ansal Plaza">Ansal Plaza</option>
-                                <option value="Chanakyapuri">Chanakyapuri</option>
-                                <option value="Chandni Chowk">Chandni Chowk</option>
-                                <option value="Connaught Place">Connaught Place</option>
-                                <option value="Defence Colony">Defence Colony</option>
-                                <option value="Delhi Cantt">Delhi Cantt</option>
-                                <option value="Dilshad Garden">Dilshad Garden</option>
-                                <option value="Dwarka">Dwarka</option>
-                                <option value="Faridabad">Faridabad</option>
-                                <option value="Gandhi Nagar">Gandhi Nagar</option>
-                                <option value="Ghaziabad">Ghaziabad</option>
-                                <option value="Greater Kailash">Greater Kailash</option>
-                                <option value="Green Park">Green Park</option>
-                                <option value="Gurgaon">Gurgaon</option>
-                                <option value="Hari Nagar">Hari Nagar</option>
-                                <option value="Hauz Khas">Hauz Khas</option>
-                                <option value="Indirapuram">Indirapuram</option>
-                                <option value="IP Extension">IP Extension</option>
-                                <option value="Janakpuri">Janakpuri</option>
-                                <option value="Kalindi Kunj">Kalindi Kunj</option>
-                                <option value="Kamla Nagar">Kamla Nagar</option>
-                                <option value="Karkardooma">Karkardooma</option>
-                                <option value="Karol Bagh">Karol Bagh</option>
-                                <option value="Kaushambi">Kaushambi</option>
-                                <option value="Khan Market">Khan Market</option>
-                                <option value="Kirti Nagar">Kirti Nagar</option>
-                                <option value="Lajpat Nagar">Lajpat Nagar</option>
-                                <option value="Lal Quarter">Lal Quarter</option>
-                                <option value="Laxmi Nagar">Laxmi Nagar</option>
-                                <option value="Madangir">Madangir</option>
-                                <option value="Malviya Nagar">Malviya Nagar</option>
-                                <option value="Mayur Vihar">Mayur Vihar</option>
-                                <option value="Meharchand Market">Meharchand Market</option>
-                                <option value="Model Town">Model Town</option>
-                                <option value="Mukherjee Nagar">Mukherjee Nagar</option>
-                                <option value="Naraina Vihar">Naraina Vihar</option>
-                                <option value="Noida">Noida</option>
-                                <option value="Paschim Vihar">Paschim Vihar</option>
-                                <option value="Patel Nagar">Patel Nagar</option>
-                                <option value="Pitampura">Pitampura</option>
-                                <option value="Punjabi Bagh">Punjabi Bagh</option>
-                                <option value="Rajouri Garden">Rajouri Garden</option>
-                                <option value="Rani Bagh">Rani Bagh</option>
-                                <option value="Rohini">Rohini</option>
-                                <option value="Saket">Saket</option>
-                                <option value="Sarojini Nagar">Sarojini Nagar</option>
-                                <option value="Seelampur">Seelampur</option>
-                                <option value="Shahdara">Shahdara</option>
-                                <option value="Shahpur Jat">Shahpur Jat</option>
-                                <option value="Shalimar Bagh">Shalimar Bagh</option>
-                                <option value="South Extension">South Extension</option>
-                                <option value="Subhash Nagar">Subhash Nagar</option>
-                                <option value="Sukhdev Vihar">Sukhdev Vihar</option>
-                                <option value="Tagore Garden">Tagore Garden</option>
-                                <option value="Tilak Nagar">Tilak Nagar</option>
-                                <option value="Vasant Kunj">Vasant Kunj</option>
-                                <option value="Vikas Puri">Vikas Puri</option>
+                                <?php foreach($markets as $market){ ?>
+                                <option value="<?= $market->market_name ?>"><?= $market->market_name ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                         <input type="submit" name="">
@@ -278,7 +166,7 @@
                                 <li>
                                     <a href="<?= $this->App->marketSlug($market->market_name); ?>">
                                         <div class="dbx-caption"><span><?= $market->market_name ?></span></div>
-                                        <img src="/images/slider-img.jpg" alt="<?= $market->market_name ?>" title="<?= $market->market_name ?>" />
+                                        <img src="/uploads/markets/<?= $market->img ?>-220x0.jpg" alt="<?= $market->market_name ?>" title="<?= $market->market_name ?>" />
                                     </a> 
                                 </li>
                                 <?php endforeach; ?>
@@ -365,65 +253,9 @@
                 <div class="selct-cont selct-cont2 select-drop-icon">
                   <select id="zk-loc-sr" name="">
                     <option value="all">In All Areas</option>
-                    <option value="Airport">Airport</option>
-                    <option value="Alaknanda">Alaknanda</option>
-                    <option value="Ansal Plaza">Ansal Plaza</option>
-                    <option value="Chanakyapuri">Chanakyapuri</option>
-                    <option value="Chandni Chowk">Chandni Chowk</option>
-                    <option value="Connaught Place">Connaught Place</option>
-                    <option value="Defence Colony">Defence Colony</option>
-                    <option value="Delhi Cantt">Delhi Cantt</option>
-                    <option value="Dilshad Garden">Dilshad Garden</option>
-                    <option value="Dwarka">Dwarka</option>
-                    <option value="Faridabad">Faridabad</option>
-                    <option value="Gandhi Nagar">Gandhi Nagar</option>
-                    <option value="Ghaziabad">Ghaziabad</option>
-                    <option value="Greater Kailash">Greater Kailash</option>
-                    <option value="Green Park">Green Park</option>
-                    <option value="Gurgaon">Gurgaon</option>
-                    <option value="Hari Nagar">Hari Nagar</option>
-                    <option value="Hauz Khas">Hauz Khas</option>
-                    <option value="Indirapuram">Indirapuram</option>
-                    <option value="IP Extension">IP Extension</option>
-                    <option value="Janakpuri">Janakpuri</option>
-                    <option value="Kalindi Kunj">Kalindi Kunj</option>
-                    <option value="Kamla Nagar">Kamla Nagar</option>
-                    <option value="Karkardooma">Karkardooma</option>
-                    <option value="Karol Bagh">Karol Bagh</option>
-                    <option value="Kaushambi">Kaushambi</option>
-                    <option value="Khan Market">Khan Market</option>
-                    <option value="Kirti Nagar">Kirti Nagar</option>
-                    <option value="Lajpat Nagar">Lajpat Nagar</option>
-                    <option value="Lal Quarter">Lal Quarter</option>
-                    <option value="Laxmi Nagar">Laxmi Nagar</option>
-                    <option value="Madangir">Madangir</option>
-                    <option value="Malviya Nagar">Malviya Nagar</option>
-                    <option value="Mayur Vihar">Mayur Vihar</option>
-                    <option value="Meharchand Market">Meharchand Market</option>
-                    <option value="Model Town">Model Town</option>
-                    <option value="Mukherjee Nagar">Mukherjee Nagar</option>
-                    <option value="Naraina Vihar">Naraina Vihar</option>
-                    <option value="Noida">Noida</option>
-                    <option value="Paschim Vihar">Paschim Vihar</option>
-                    <option value="Patel Nagar">Patel Nagar</option>
-                    <option value="Pitampura">Pitampura</option>
-                    <option value="Punjabi Bagh">Punjabi Bagh</option>
-                    <option value="Rajouri Garden">Rajouri Garden</option>
-                    <option value="Rani Bagh">Rani Bagh</option>
-                    <option value="Rohini">Rohini</option>
-                    <option value="Saket">Saket</option>
-                    <option value="Sarojini Nagar">Sarojini Nagar</option>
-                    <option value="Seelampur">Seelampur</option>
-                    <option value="Shahdara">Shahdara</option>
-                    <option value="Shahpur Jat">Shahpur Jat</option>
-                    <option value="Shalimar Bagh">Shalimar Bagh</option>
-                    <option value="South Extension">South Extension</option>
-                    <option value="Subhash Nagar">Subhash Nagar</option>
-                    <option value="Sukhdev Vihar">Sukhdev Vihar</option>
-                    <option value="Tagore Garden">Tagore Garden</option>
-                    <option value="Tilak Nagar">Tilak Nagar</option>
-                    <option value="Vasant Kunj">Vasant Kunj</option>
-                    <option value="Vikas Puri">Vikas Puri</option>
+                    <?php foreach($markets as $market){ ?>
+                    <option value="<?= $market->market_name ?>"><?= $market->market_name ?></option>
+                    <?php } ?>
                   </select>
                 </div>
                 <input type="submit" name="">

@@ -14,7 +14,7 @@
                             <?php
                                 echo $this->Form->input('city_id', ['options' => $cities, 'class' => 'form-control', 'div' => ['class' => 'form-group']]);
                                 echo $this->Form->input('market_name', ['class' => 'form-control', 'div' => ['class' => 'form-group']] );
-                                echo $this->Form->input('picture', ['type' => 'file','class' => 'form-control', 'div' => ['class' => 'form-group']]);
+                                echo $this->Form->input('file_img', ['type' => 'file','class' => 'form-control', 'div' => ['class' => 'form-group']]);
                             ?>
                         </fieldset>
                         <?= $this->Form->button(__('Submit')) ?>

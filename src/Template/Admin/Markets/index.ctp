@@ -32,8 +32,8 @@
                         <?php foreach ($markets as $market): ?>
                             <tr>
                                 <td>
-                                    <p data-bind="click:showCropper" data-id="<?= $market->id ?>" data-src="<?= $market->img ?>">
-                                        <img src="/<?= $market->img ?>" style="height: 60px;" onerror="$(this).parent().remove();" />
+                                    <p data-bind="click:showCropper" data-id="<?= $market->id ?>" data-src="/uploads/markets/<?= $market->img ?>.jpg" data-field="img">
+                                        <img src="/uploads/markets/<?= $market->img ?>-220x0.jpg" style="height: 60px;" />
                                     </p>
                                 </td>
                                 <td>
@@ -92,10 +92,13 @@
         me.cropBoxData = null;
         me.canvasData = null;
         me.imgSrc = ko.observable('');
+        me.field = ko.observable('');
         me.id = ko.observable('');
         me.showCropper = function(d,e){
             me.cropBoxData = null;
-            me.imgSrc('/'+$(e.currentTarget).data().src);
+            me.imgSrc($(e.currentTarget).data().src);
+            me.field($(e.currentTarget).data().field);
+            me.id($(e.currentTarget).data().id);
             $('#cropper-modal').modal('show');
         };
         me.close = function(){
@@ -105,14 +108,15 @@
             $('#cropper-modal').modal('hide');
             me.cropBoxData = $image.cropper('getCropBoxData');
             me.canvasData = $image.cropper('getCanvasData');
-            $.post('<?= \Cake\Routing\Router::url('/admin/crop') ?>',{img: me.imgSrc() ,canvas: me.canvasData, crop: me.cropBoxData, type:'market', id:me.id()},function(d){
-//                window.location.reload();
+            $.post('<?= \Cake\Routing\Router::url('/admin/crop') ?>',{field: me.field(),img: me.imgSrc() ,canvas: me.canvasData, crop: me.cropBoxData, entity:'Markets', id:me.id()},function(d){
+                window.location.reload();
             });
         }
         me._init = function () {
             m = me;
             $('#cropper-modal').on('shown.bs.modal', function () {
                 $image.cropper({
+                    aspectRatio: 220 / 79,
 //                    autoCropArea: 0.5,
                     built: function () {
                         // Strict mode: set crop box data first
