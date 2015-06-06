@@ -19,7 +19,7 @@ class FeedPopularController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 1
+            'limit' => 3
         ];
         $this->set('feedPopular', $this->paginate($this->FeedPopular));
         $this->set('_serialize', ['feedPopular']);
