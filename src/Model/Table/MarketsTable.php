@@ -25,8 +25,17 @@ class MarketsTable extends Table {
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
         $this->addBehavior('Upload',[
-            'testOpt' => [
-                'param1' => 1
+            'imageQuality' => 80,
+            'uploadField' => 'img',
+            'config' => [
+                'Markets' => [
+                    'sizes' => [
+                        '220x0' => [220, 0],
+                        '40x0' => [40, 0],
+                    ],
+                    'dirPattern' => "{WWW_ROOT}uploads{DS}markets{DS}", // http://v3.zakoopi.com/uploads/markets/ + name + -size.jpg
+                    'slugColumn' => "market_name"
+                ]
             ]
         ]);
 //        $this->addBehavior('Utils.Uploadable', [

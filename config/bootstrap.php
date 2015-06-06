@@ -64,8 +64,8 @@ use Cake\Utility\Security;
  */
 try {
     Configure::config('default', new PhpConfig());
-    if(isset($_SERVER)){
-        if(@$_SERVER['SERVER_NAME'] == 'localhost'){
+    if(isset($_SERVER['SERVER_NAME'])){
+        if($_SERVER['SERVER_NAME'] == 'localhost'){
             Configure::load('staging', 'default', false);
         }else{
             Configure::load('live', 'default', false);

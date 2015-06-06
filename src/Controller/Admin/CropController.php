@@ -14,11 +14,19 @@ class CropController extends AppController{
         'Markets' => [
             'sizes' => [
                 '220x0' => [220, 0],
-                '40x0' => [40, 0],
+                '80x0' => [80, 0],
 //                '0x65' => [0, 65]
             ],
             'dirPattern' => "{WWW_ROOT}uploads{DS}markets{DS}", // http://v3.zakoopi.com/uploads/markets/ + name + -size.jpg
             'slugColumn' => "market_name"
+        ],
+        'Trends' => [
+            'sizes' => [
+                '220x0' => [220, 0],
+                '80x0' => [80, 0],
+            ],
+            'dirPattern' => "{WWW_ROOT}uploads{DS}trends{DS}", // http://v3.zakoopi.com/uploads/markets/ + name + -size.jpg
+            'slugColumn' => "trend_name"
         ]
     ];
     private $field = 'img';

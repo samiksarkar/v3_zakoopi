@@ -7,20 +7,30 @@ use Cake\ORM\Behavior;
 use Cake\Utility\Inflector;
 
 class UploadBehavior extends Behavior {
-
-    private $config = [
-        'Markets' => [
-            'sizes' => [
-                '220x0' => [220, 0],
-                '40x0' => [40, 0],
-//                '0x65' => [0, 65]
-            ],
-            'dirPattern' => "{WWW_ROOT}uploads{DS}markets{DS}", // http://v3.zakoopi.com/uploads/markets/ + name + -size.jpg
-            'slugColumn' => "market_name"
-        ]
-    ];
+    
     private $field = 'img';
     private $imageQuality = 80;
+    private $config = [
+//        'Markets' => [
+//            'sizes' => [
+//                '220x0' => [220, 0],
+//                '40x0' => [40, 0],
+//            ],
+//            'dirPattern' => "{WWW_ROOT}uploads{DS}markets{DS}", // http://v3.zakoopi.com/uploads/markets/ + name + -size.jpg
+//            'slugColumn' => "market_name"
+//        ]
+    ];
+        
+    
+    public function initialize(array $config) {
+        parent::initialize($config);
+        $this->imageQuality = $config['imageQuality'];
+        $this->field = $config['uploadField'];
+        $this->config = $config['config'];
+    }
+
+    
+    
 
     /**
      * Send like "{WWW_ROOT}uploads{DS}markets{DS}" and it will return like "D:\project\webroot\uploads\markets"
@@ -63,9 +73,7 @@ class UploadBehavior extends Behavior {
         //$img->
     }
 
-    public function initialize(array $config) {
-        parent::initialize($config);
-    }
+    
 
     public function beforeSave(Event $event, \Cake\ORM\Entity $entity) {
         $tstamp = time();

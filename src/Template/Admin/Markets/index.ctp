@@ -33,7 +33,7 @@
                             <tr>
                                 <td>
                                     <p data-bind="click:showCropper" data-id="<?= $market->id ?>" data-src="/uploads/markets/<?= $market->img ?>.jpg" data-field="img">
-                                        <img src="/uploads/markets/<?= $market->img ?>-220x0.jpg" style="height: 60px;" />
+                                        <img src="/uploads/markets/<?= $market->img ?>.jpg" style="height: 60px;" />
                                     </p>
                                 </td>
                                 <td>

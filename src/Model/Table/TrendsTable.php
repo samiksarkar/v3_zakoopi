@@ -25,6 +25,22 @@ class TrendsTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Upload',[
+            'imageQuality' => 80,
+            'uploadField' => 'img',
+            'config' => [
+                'Trends' => [
+                    'sizes' => [
+                        '220x0' => [220, 0],
+                        '80x0' => [80, 0],
+                    ],
+                    'dirPattern' => "{WWW_ROOT}uploads{DS}trends{DS}", // http://v3.zakoopi.com/uploads/markets/ + name + -size.jpg
+                    'slugColumn' => "trend_name"
+                ]
+            ]
+        ]);
+        
+        
         $this->belongsTo('Cities', [
             'foreignKey' => 'city_id',
             'joinType' => 'INNER'
@@ -46,7 +62,12 @@ class TrendsTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->allowEmpty('id', 'create');
+            ->allowEmpty(
+                    'id', 
+                    'create',
+                    'img',
+                    'file_img'  //virtual Field for file
+                    );
             
         $validator
             ->requirePresence('trend_name', 'create')

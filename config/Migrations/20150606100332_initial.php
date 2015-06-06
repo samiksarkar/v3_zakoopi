@@ -331,6 +331,29 @@ class Initial extends AbstractMigration
                 'null' => false,
             ])
             ->create();
+        $table = $this->table('feed_popular');
+        $table
+            ->addColumn('key', 'integer', [
+                'default' => null,
+                'limit' => 11,
+                'null' => false,
+            ])
+            ->addColumn('model', 'string', [
+                'default' => null,
+                'limit' => 100,
+                'null' => false,
+            ])
+            ->addColumn('order', 'integer', [
+                'default' => null,
+                'limit' => 11,
+                'null' => false,
+            ])
+            ->addColumn('timestamp', 'datetime', [
+                'default' => null,
+                'limit' => null,
+                'null' => true,
+            ])
+            ->create();
         $table = $this->table('geocodes');
         $table
             ->addColumn('place', 'string', [
@@ -532,6 +555,11 @@ class Initial extends AbstractMigration
             ->addColumn('modified', 'datetime', [
                 'default' => null,
                 'limit' => null,
+                'null' => false,
+            ])
+            ->addColumn('img', 'string', [
+                'default' => null,
+                'limit' => 200,
                 'null' => false,
             ])
             ->create();
@@ -1417,6 +1445,11 @@ class Initial extends AbstractMigration
                 'limit' => 11,
                 'null' => false,
             ])
+            ->addColumn('img', 'string', [
+                'default' => null,
+                'limit' => 200,
+                'null' => false,
+            ])
             ->create();
         $table = $this->table('user_checkins');
         $table
@@ -1568,6 +1601,7 @@ class Initial extends AbstractMigration
         $this->dropTable('cities');
         $this->dropTable('enquiries');
         $this->dropTable('fabrics');
+        $this->dropTable('feed_popular');
         $this->dropTable('geocodes');
         $this->dropTable('homepage_ads');
         $this->dropTable('homepage_ads_regions');

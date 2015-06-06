@@ -20,5 +20,7 @@ class Trend extends Entity
         'city' => true,
         'trend_cities' => true,
         'trend_offerings' => true,
+        'img' => true,
+        'file_img' => true //virtual Field for file
     ];
 }
