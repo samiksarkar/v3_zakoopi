@@ -77,7 +77,7 @@ task :deploy => :environment do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     queue! %[composer install]
-    queue! %[bin/cake migrations migrate]
+    queue! %[sudo php bin/cake.php migrations migrate]
     # queue! %[chown -R ec2-user "#{deploy_to}/#{current_path}/logs"]
     # queue! %[sudo chmod 777 -R "#{deploy_to}/#{current_path}/logs"]
     # invoke :'rails:db_migrate'
