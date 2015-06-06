@@ -11,6 +11,19 @@ use App\Controller\Admin\AppController;
 class FeedPopularController extends AppController
 {
 
+    public $paginate = [
+        'limit' => 25,
+        'order' => [
+            'FeedPopular.order' => 'asc'
+        ]
+    ];
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }
+    
     /**
      * Index method
      *
@@ -18,6 +31,12 @@ class FeedPopularController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'order' => [
+                'FeedPopular.order' => 'desc',
+                'limit' => 1100000
+            ]
+        ];
         $this->set('feedPopular', $this->paginate($this->FeedPopular));
         $this->set('_serialize', ['feedPopular']);
     }

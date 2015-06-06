@@ -73,7 +73,7 @@ try {
     }else{
         Configure::load('staging', 'default', false);
     }
-    Configure::load('live', 'default', false);
+//    Configure::load('live', 'default', false);
 
 } catch (\Exception $e) {
     die($e->getMessage() . "\n");

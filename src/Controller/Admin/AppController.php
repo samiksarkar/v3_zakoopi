@@ -59,7 +59,7 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-        if($this->request->param('prefix') == 'admin' && in_array($this->request->param('_ext'), ['json','xml'])){
+        if($this->request->param('prefix') == 'admin' && in_array($this->request->param('_ext'), ['json','xml']) && !in_array($this->request->param('controller'),['FeedPopular'])){
             throw new \Cake\Network\Exception\NotFoundException('Page Not Found');
         }
         $this->loadComponent('Flash');

@@ -10,6 +10,20 @@ use App\Controller\Api\AppController;
  */
 class FeedPopularController extends AppController
 {
+    
+    public $paginate = [
+        'limit' => 25,
+        'order' => [
+            'FeedPopular.order' => 'asc'
+        ]
+    ];
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+        $this->Auth->allow(['index']);
+    }
 
     /**
      * Index method
