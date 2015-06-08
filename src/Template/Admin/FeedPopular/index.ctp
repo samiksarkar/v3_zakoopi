@@ -3,7 +3,7 @@
 
     <div class="col-lg-10">
         <div class="box">
-        <div class="box-header">
+            <div class="box-header">
                 <h3 class="box-title"></h3>
                 <div class="box-tools">
 
@@ -11,13 +11,25 @@
             </div>
             <div class="box-body">
                 <h2>Card in Popular Feed</h2>
+                <sub data-bind="visible:updating">Updating Order...</sub>
                 <div data-bind="foreach:list, uiSortableList: list " style="min-height: 500px;">
-                    
+
                     <div style="padding: 4px; border-radius: 4px; box-shadow: 2px 2px 3px #eee; border:grey; background: #eee; margin: 4px; min-height: 40px">
                         <p class="bg-light-blue-gradient"> ID:<!-- ko text:id --><!-- /ko -->) Card Type: <!-- ko text:model --><!-- /ko --></p>
-
+                        <div>
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -53,10 +65,32 @@
     var FeedPopularVM = function () {
         var me = this;
         me.list = ko.observableArray([]);
+        me.sendNewOrder = false;
+        me.updating = ko.observable(false);
+        me.list.subscribe(function (n) {
+            if (!me.sendNewOrder) {
+                return false;
+            }
+            me.updating(true);
+            var odr = [];
+            for (i in n) {
+                odr.push({
+                        id: n[i].id,
+                        order: i
+                });
+            }
+            
+            me.sendNewOrder = false;
+            $.post("<?= \Cake\Routing\Router::url('/admin/feedPopular/orderUpdate'); ?>",{ "list": JSON.stringify(odr)}, function (d) {
+                me.sendNewOrder = true;
+                me.updating(false);
+            });
+        }, this);
         me.getData = function () {
             $.get("<?= \Cake\Routing\Router::url('/admin/feedPopular.json'); ?>", function (d) {
                 if (typeof d.error == "undefined") {
                     me.list(d.feedPopular);
+                    me.sendNewOrder = true;
                 }
             });
         };
@@ -100,7 +134,7 @@
                         <td><?= h($feedPopular->timestamp) ?></td>
                         <td class="actions">
                             <?= $this->Html->link(__('View'), ['action' => 'view', $feedPopular->id]) ?>
-        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $feedPopular->id]) ?>
+                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $feedPopular->id]) ?>
         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $feedPopular->id], ['confirm' => __('Are you sure you want to delete # {0}?', $feedPopular->id)]) ?>
                         </td>
                     </tr>
@@ -111,7 +145,7 @@
         <div class="paginator">
             <ul class="pagination">
                 <?= $this->Paginator->prev('< ' . __('previous')) ?>
-    <?= $this->Paginator->numbers() ?>
+                <?= $this->Paginator->numbers() ?>
     <?= $this->Paginator->next(__('next') . ' >') ?>
             </ul>
             <p><?= $this->Paginator->counter() ?></p>

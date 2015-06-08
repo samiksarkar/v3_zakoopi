@@ -40,6 +40,20 @@ class FeedPopularController extends AppController
         $this->set('feedPopular', $this->paginate($this->FeedPopular));
         $this->set('_serialize', ['feedPopular']);
     }
+    public function orderUpdate(){
+        if($this->request->is(['post'])){
+            $d = $this->request->data;
+            $d = json_decode($d['list']);
+            foreach($d as $i){
+                $feeds = \Cake\ORM\TableRegistry::get('FeedPopular');
+                $feed = $feeds->find('all')->where(['id' => $i->id])->first();
+                $feed->order =  $i->order + 1;
+                $feeds->save($feed); 
+            }
+            echo 'done';
+            exit;
+        }
+    }
 
     /**
      * View method

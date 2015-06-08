@@ -32,9 +32,7 @@ class FeedPopularController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'limit' => 3
-        ];
+        $this->paginate['limit'] = 3;
         $this->set('feedPopular', $this->paginate($this->FeedPopular));
         $this->set('_serialize', ['feedPopular']);
     }

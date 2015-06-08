@@ -26,8 +26,10 @@ class FeedPopular extends Entity
     
     protected function _getData(){
         $table = \Cake\ORM\TableRegistry::get($this->_properties['model']);
-        if($this->_properties['model'] == 'Lookbooks'){
-            $result = $table->find()->contain(['LookbookComments','LookbookLikes'])->where(['id'=>$this->_properties['key']])->first();
+        if($this->_properties['model'] == 'Stores'){
+            $result = $table->find()->contain(['StoreImages'])->where(['id'=>$this->_properties['key']])->first();
+        }elseif($this->_properties['model'] == 'Lookbooks'){
+            $result = $table->find()->contain(['LookbookComments','LookbookLikes','Cards'])->where(['id'=>$this->_properties['key']])->first();
         }else{
             $result = $table->find()->where(['id'=>$this->_properties['key']])->first();
         }
