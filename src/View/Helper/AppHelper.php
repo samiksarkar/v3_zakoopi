@@ -12,6 +12,20 @@ class AppHelper extends Helper {
      * @param boolean $fullUrl Should return full url of market or not 
      * @return string url for market
      */
+    /*
+    public function marketSlug($marketName, $fullUrl = false){
+        $marketName = strtolower(trim($marketName));
+        $marketName = str_ireplace(" ", "-", $marketName);
+        return \Cake\Routing\Router::url('/'.$marketName,$fullUrl);
+    }
+    */
+    
+    /**
+     * Updated by Abhi
+     * @param string $marketName Name of the Market
+     * @param boolean $fullUrl Should return full url of market or not 
+     * @return string url for market includes the city also
+     */
     public function marketSlug($marketName, $fullUrl = false){
         $marketName = strtolower(trim($marketName));
         $marketName = str_ireplace(" ", "-", $marketName);

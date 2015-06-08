@@ -11,8 +11,9 @@ $minifyJs = new Minify\JS();
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title><?= $this->fetch('title') ?></title>
         <?= $this->Html->meta('icon') ?>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <?php 
+        // This is for minify Css
         if(!\Cake\Core\Configure::read('debug')){
             $minifyCss->add(
                 WWW_ROOT . 'css'.DS.'bootstrap.min.css',
@@ -25,6 +26,27 @@ $minifyJs = new Minify\JS();
             echo $this->Html->css('bootstrap.min.css');
             echo $this->Html->css('style.css');
             echo $this->Html->css('media.css');
+        }
+        
+        // This is for the minify js
+        if(!\Cake\Core\Configure::read('debug')){
+            $minifyJs->add(
+                WWW_ROOT . 'js'.DS.'bootstrap.min.js',
+                WWW_ROOT . 'js'.DS.'imagesloaded.3.1.8.min.js',
+                WWW_ROOT . 'js'.DS.'jquery.masonry.3.2.1.min.js',
+                WWW_ROOT . 'js'.DS.'base.js',
+                WWW_ROOT . 'js'.DS.'jquery.bxslider.js'
+                    
+            );
+            $minifyJs->minify(WWW_ROOT . 'js_cache'.DS.'bundleOne.js');
+            echo $this->Html->script('/js_cache/bundleOne.js');
+        }else{
+            echo $this->Html->script('bootstrap.min.js');
+            echo $this->Html->script('imagesloaded.3.1.8.min.js');
+            echo $this->Html->script('jquery.masonry.3.2.1.min.js');
+            echo $this->Html->script('base.js');
+            echo $this->Html->script('jquery.bxslider.js');
+           
         }
         ?>
         
@@ -83,15 +105,9 @@ $minifyJs = new Minify\JS();
                 </div>
             </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed-->
-        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/imagesloaded.3.1.8.min.js"></script>
-        <script src="js/jquery.masonry.3.2.1.min.js"></script>
-        <script src="js/base.js" type="text/javascript"></script>
-        <script src="js/base.js" type="text/javascript"></script>
-        <script src="js/jquery.bxslider.js" type="text/javascript"></script>
+        
+        
+      
         <script>
             $(document).ready(function () {
                 $('.left-filter #dLabel, .filter_close').click(function () {
@@ -126,5 +142,6 @@ $minifyJs = new Minify\JS();
 
             });
         </script>
+       
     </body>
 </html>

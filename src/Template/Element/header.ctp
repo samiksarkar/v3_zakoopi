@@ -164,8 +164,8 @@
                             <ul class="bxslider" id="bx-slider-markets">
                                 <?php foreach($markets as $market): ?>
                                 <li>
-                                    <a href="<?= $this->App->marketSlug($market->market_name); ?>">
-                                        <div class="dbx-caption"><span><?= $market->market_name ?></span></div>
+                                    <a href="<?= $this->App->marketSlug($market->url_slug); ?>">
+                                        <div class="dbx-caption"><span><?= $market->city->city_name; ?></span></div>
                                         <img src="/uploads/markets/<?= $market->img ?>-220x0.jpg" alt="<?= $market->market_name ?>" title="<?= $market->market_name ?>" />
                                     </a> 
                                 </li>

@@ -18,28 +18,28 @@
                         <ul class="hots-product">
                             <li class="col-md-4 col-sm-4 col-xs-8">
                                 <div class="hots-pro">
-                                    <h3><a href="3">9 Shopping Tips to find the Perfect Bridal Lehenga in Chandni Chowk</a></h3>
+                                    <h3><a href="/articles/view/2">9 Shopping Tips to find the Perfect Bridal Lehenga in Chandni Chowk</a></h3>
                                     <a href="#"><img src="images/pro-img1.jpg" alt="" /></a>
                                     <div class="product-info"> <span class="circle"></span> <span class="title">Hariprasad</span> </div>
                                 </div>
                             </li>
                             <li class="col-md-4 col-sm-4 col-xs-8">
                                 <div class="hots-pro">
-                                    <h3><a href="3">Shopping in Sarojini</a></h3>
+                                    <h3><a href="/articles/view/3">Shopping in Sarojini</a></h3>
                                     <a href="#"><img src="images/pro-img2.jpg" alt="" /></a>
                                     <div class="product-info"> <span class="circle"></span> <span class="title">Hariprasad</span> </div>
                                 </div>
                             </li>
                             <li class="col-md-4 col-sm-4 col-xs-8">
                                 <div class="hots-pro">
-                                    <h3><a href="3">Shopping in Sarojini</a></h3>
+                                    <h3><a href="/articles/view/4">Shopping in Sarojini</a></h3>
                                     <a href="#"><img src="images/pro-img2.jpg" alt="" /></a>
                                     <div class="product-info"> <span class="circle"></span> <span class="title">Hariprasad</span> </div>
                                 </div>
                             </li>
                             <li class="col-md-4 col-sm-4 col-xs-8">
                                 <div class="hots-pro">
-                                    <h3><a href="3">Shopping in Sarojini</a></h3>
+                                    <h3><a href="/articles/view/5">Shopping in Sarojini</a></h3>
                                     <a href="#"><img src="images/pro-img2.jpg" alt="" /></a>
                                     <div class="product-info"> <span class="circle"></span> <span class="title">Hariprasad</span> </div>
                                 </div>
@@ -51,7 +51,7 @@
                             <ul class="hots-product">
                                 <li class="col-md-4 col-sm-4 col-xs-8">
                                     <div class="hots-pro">
-                                        <h3><a href="3">Shopping in Sarojini</a></h3>
+                                        <h3><a href="/articles/view/6">Shopping in Sarojini</a></h3>
                                         <a href="#"><img src="images/pro-img2.jpg" alt="" /></a>
                                         <div class="product-info"> <span class="circle"></span> <span class="title">Hariprasad</span> </div>
                                     </div>
@@ -191,3 +191,4 @@
             </div>
     </section>
 </div>
+        

@@ -74,9 +74,11 @@ class PagesController extends AppController
      */
     
     public function home(){
+        
         $this->set('isHome', true);
         $markets = \Cake\ORM\TableRegistry::get('Markets');
-        $this->set('markets', $markets->find('all'));
+        $this->set('markets' ,$x = $markets->find('all')->contain(['Cities'])->toArray());
+       
         
         $trends = \Cake\ORM\TableRegistry::get('Trends');
         $this->set('trends', $trends->find());
