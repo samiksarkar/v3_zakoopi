@@ -285,80 +285,80 @@
     </section>
 </div>
 <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-6"> <a title="Download App" class="download-btn visible-xs" >Download App</a>
-        <div class="google-app">
-          <ul class="app-box">
-            <h5 class="hidden-xs">Download App </h5>
-            <li><img src="/images/app-store.png" alt="" /></li>
-            <li><img src="/images/play-store.png" alt="" /></li>
-          </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6"> <a title="Download App" class="download-btn visible-xs" >Download App</a>
+                <div class="google-app">
+                    <h5 class="hidden-xs">Download App </h5>
+                    <ul class="app-box">
+                        <li><img src="/images/app-store.png" alt="" /></li>
+                        <li><img src="/images/play-store.png" alt="" /></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-1 hidden-xs">
+                <div class="or-txt"> or </div>
+            </div>
+            <div class="col-md-9 col-sm-9 hidden-xs">
+                <div class="footer-form footer-form1 row">
+                    <ul>
+                        <li>
+                            <div class="col-md-10 col-sm-8">
+                                <input type="text" name="" value="Phone Number" />
+                            </div>
+                            <div class="col-md-6 col-sm-8">
+                                <div class="share-box"> <a href="#">Send me the link</a> </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-1 col-sm-1 hidden-xs">
-        <div class="or-txt"> or </div>
-      </div>
-      <div class="col-md-9 col-sm-9 hidden-xs">
-        <div class="footer-form footer-form1 row">
-          <ul>
-            <li>
-              <div class="col-md-10 col-sm-8">
-                <input type="text" name="" value="Phone Number" />
-              </div>
-              <div class="col-md-6 col-sm-8">
-                <div class="share-box"> <a href="#">Send me the link</a> </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </div>
 </footer>
 <div class="plus-icon"><a href="#" data-toggle="modal" data-target="#homepop"><img src="/images/plus-icon.png" alt="" /></a></div>
 <div class="modal fade" id="homepop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="home-popup">
-    <div class="left-sec"> <a href="addlookbook.html"><img src="/images/lookbook-img2.png" alt="" /></a> <span>Upload a lookbook</span> </div>
-    <div class="left-sec"> <a href="#" data-toggle="modal" data-target="#writepopup"><img src="/images/review-img.png"  alt="" /></a> <span>Write a review</span> </div>
-  </div>
+    <div class="home-popup">
+        <div class="left-sec"> <a href="addlookbook.html"><img src="/images/lookbook-img2.png" alt="" /></a> <span>Upload a lookbook</span> </div>
+        <div class="left-sec"> <a href="#" data-toggle="modal" data-target="#writepopup"><img src="/images/review-img.png"  alt="" /></a> <span>Write a review</span> </div>
+    </div>
 </div>
 <div class="modal fade" id="writepopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="user-popup5">
-  <div class="user-popup-inner"> <a href="#" class="close" data-dismiss="modal"> <img src="/images/popup-close-img.jpg" alt="" class="close-icon" /></a>
-    <div class="write-input">
-      <select name="">
-        <option>Select 1</option>
-        <option>Select 2</option>
-        <option>Select 3</option>
-      </select>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="your-raiting-box your-header-raiting ">
-          <h3>Your rating:</h3>
-          <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li class="last"><a href="#">2.5</a></li>
-            <li class="close-icon"><a class="close-icon" data-dismiss="modal" href="#"><img src="/images/close-img-w.png"></a></li>
-          </ul>
+    <div class="user-popup5">
+        <div class="user-popup-inner"> <a href="#" class="close" data-dismiss="modal"> <img src="/images/popup-close-img.jpg" alt="" class="close-icon" /></a>
+            <div class="write-input">
+                <select name="">
+                    <option>Select 1</option>
+                    <option>Select 2</option>
+                    <option>Select 3</option>
+                </select>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer"> </div>
     </div>
-  </div>
-</div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="your-raiting-box your-header-raiting ">
+                        <h3>Your rating:</h3>
+                        <ul>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li class="last"><a href="#">2.5</a></li>
+                            <li class="close-icon"><a class="close-icon" data-dismiss="modal" href="#"><img src="/images/close-img-w.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer"> </div>
+            </div>
+        </div>
+    </div>
