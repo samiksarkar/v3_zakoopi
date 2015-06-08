@@ -34,6 +34,6 @@ class Team extends Entity
         
     }
     protected function _getAndroidApiImg($img){
-        return \Cake\Routing\Router::url('/uploads/teams/'.$img."-720x0.jpg",true);
+        return \Cake\Routing\Router::url('/uploads/teams/'.$this->_properties['img']."-720x0.jpg",true);
     }
 }
