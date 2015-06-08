@@ -15,14 +15,14 @@
     </ul>
 </div>
 <div class="teams form large-10 medium-9 columns">
-    <?= $this->Form->create($team) ?>
+    <?= $this->Form->create($team,['type'=>'file']) ?>
     <fieldset>
         <legend><?= __('Edit Team') ?></legend>
         <?php
             echo $this->Form->input('title');
             echo $this->Form->input('timestamp');
             echo $this->Form->input('hits');
-            echo $this->Form->input('img');
+            echo $this->Form->input('file_img',['type'=>'file']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

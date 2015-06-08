@@ -22,4 +22,10 @@ class ArticleImage extends Entity
         'url' => true,
         'article' => true,
     ];
+    protected $_virtual = [
+        'android_api_img'
+    ];
+    protected function _getAndroidApiImg($img){
+        return \Cake\Routing\Router::url('/uploads/articles/original/'.$this->_properties['name'],true);
+    }
 }

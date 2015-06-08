@@ -21,5 +21,19 @@ class Team extends Entity
         'img' => true,
         'team_likes' => true,
         'team_users' => true,
+        'file_img' => true,
     ];
+    protected $_virtual = [
+        'likes_count',
+        'android_api_img'
+    ];
+    
+    protected function _getLikesCount(){
+        $likes = \Cake\ORM\TableRegistry::get('TeamLikes');
+        return $likes->find()->where(['TeamLikes.team_id' => $this->_properties['id']])->count();
+        
+    }
+    protected function _getAndroidApiImg($img){
+        return \Cake\Routing\Router::url('/uploads/teams/'.$img."-720x0.jpg",true);
+    }
 }

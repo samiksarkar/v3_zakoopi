@@ -24,6 +24,22 @@ class TeamsTable extends Table
         $this->table('teams');
         $this->displayField('title');
         $this->primaryKey('id');
+        $this->addBehavior('Upload',[
+            'imageQuality' => 80,
+            'uploadField' => 'img',
+            'config' => [
+                'Teams' => [
+                    'sizes' => [
+                        '720x0' => [720, 0],
+                        '40x0' => [40, 0],
+                    ],
+                    'dirPattern' => "{WWW_ROOT}uploads{DS}teams{DS}", // http://v3.zakoopi.com/uploads/teams/ + name + -size.jpg
+                    'slugColumn' => "title"
+                ]
+            ]
+        ]);
+        
+        
         $this->hasMany('TeamLikes', [
             'foreignKey' => 'team_id'
         ]);
@@ -48,19 +64,19 @@ class TeamsTable extends Table
             ->requirePresence('title', 'create')
             ->notEmpty('title');
             
-        $validator
-            ->requirePresence('timestamp', 'create')
-            ->notEmpty('timestamp');
+//        $validator
+//            ->requirePresence('timestamp', 'create')
+//            ->notEmpty('timestamp');
             
-        $validator
-            ->add('hits', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('hits', 'create')
-            ->notEmpty('hits');
+//        $validator
+//            ->add('hits', 'valid', ['rule' => 'numeric'])
+//            ->requirePresence('hits', 'create')
+//            ->notEmpty('hits');
             
-        $validator
-            ->add('img', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('img', 'create')
-            ->notEmpty('img');
+//        $validator
+//            ->add('img', 'valid', ['rule' => 'numeric'])
+//            ->requirePresence('img', 'create')
+//            ->notEmpty('img');
 
         return $validator;
     }

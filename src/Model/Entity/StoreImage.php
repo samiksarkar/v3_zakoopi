@@ -20,4 +20,12 @@ class StoreImage extends Entity
         'desc' => true,
         'store' => true,
     ];
+    protected $_virtual = [
+        'android_api_img'
+    ];
+    protected function _getAndroidApiImg($img){
+        return \Cake\Routing\Router::url('/uploads/stores/store_'.$this->_properties['store_id']."/".$this->_properties['name'],true);
+    }
+    
+    
 }
