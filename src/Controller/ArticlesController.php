@@ -10,7 +10,19 @@ use App\Controller\AppController;
  */
 class ArticlesController extends AppController
 {
-
+    
+    /**
+     * beforeFilter method
+     *
+     * @define 
+     */
+     public function beforeFilter(\Cake\Event\Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow('view');
+    }
+    
+    
     /**
      * Index method
      *
