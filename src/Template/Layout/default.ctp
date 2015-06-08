@@ -141,6 +141,9 @@ $minifyJs = new Minify\JS();
                 adaptiveHeight: 'true'
 
             });
+            $(".download-btn").click(function(){
+                $("ul.app-box").slideToggle();
+            }); 
         </script>
        
     </body>
