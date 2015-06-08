@@ -35,4 +35,12 @@ class Article extends Entity
         'article_stores' => true,
         'users' => true
     ];
+    protected $_virtual = [
+      'likes_count'  
+    ];
+    protected function _getLikesCount(){
+        $likes = \Cake\ORM\TableRegistry::get('ArticleLikes');
+        $likeCnt = $likes->find()->where(['article_id' => $this->_properties['id']])->count();
+        return $likeCnt;
+    }
 }

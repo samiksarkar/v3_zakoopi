@@ -83,4 +83,12 @@ class Store extends Entity
         'user_checkins' => true,
         'user_favourites' => true,
     ];
+    protected $_virtual = [
+        'likes_count'
+    ];
+    
+    protected function _getLikesCount(){
+        $likes = \Cake\ORM\TableRegistry::get('StoreLikes');
+        return $likes->find()->where(['StoreLikes.store_id' => $this->_properties['id']])->count();
+    }
 }

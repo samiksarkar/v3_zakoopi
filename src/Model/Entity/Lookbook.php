@@ -23,9 +23,9 @@ class Lookbook extends Entity
         'lookbookcomment_count' => true,
         'lookbooklike_count' => true,
         'view_count' => true,
-        'user' => true,
         'cards' => true,
         'lookbookcomments' => true,
         'lookbooklikes' => true,
+        'users' => true,
     ];
 }

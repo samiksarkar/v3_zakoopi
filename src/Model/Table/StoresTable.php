@@ -70,6 +70,9 @@ class StoresTable extends Table
         $this->hasMany('UserFavourites', [
             'foreignKey' => 'store_id'
         ]);
+        $this->hasMany('StoreLikes', [
+            'foreignKey' => 'store_id'
+        ]);
     }
 
     /**

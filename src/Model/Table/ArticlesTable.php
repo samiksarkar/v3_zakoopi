@@ -28,7 +28,7 @@ class ArticlesTable extends Table
         $this->belongsTo('Cities', [
             'foreignKey' => 'city_id'
         ]);
-		$this->belongsTo('Users', [
+        $this->belongsTo('Users', [
             'foreignKey' => 'createdBy'
         ]);
         $this->hasMany('ArticleHits', [

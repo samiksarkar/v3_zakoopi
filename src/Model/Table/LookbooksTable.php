@@ -26,7 +26,7 @@ class LookbooksTable extends Table
         $this->primaryKey('id');
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
-            'joinType' => 'INNER'
+//            'joinType' => 'INNER'
         ]);
         $this->hasMany('Cards', [
             'foreignKey' => 'lookbook_id'

@@ -51,6 +51,15 @@ class UsersTable extends Table
         $this->hasMany('UserFavourites', [
             'foreignKey' => 'user_id'
         ]);
+        $this->hasMany('Articles', [
+            'foreignKey' => 'createdBy'
+        ]);
+        $this->hasMany('TeamUsers', [
+            'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('TeamLikes', [
+            'foreignKey' => 'user_id'
+        ]);
     }
 
     /**
