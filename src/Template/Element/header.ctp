@@ -476,7 +476,7 @@ function loginCallback(result)
 }
 function onLoadCallback()
 {
-    gapi.client.setApiKey('216585866753-jemq010jlqbs60g144j3sv7juis4olm0.apps.googleusercontent.com');
+    gapi.client.setApiKey(null);
     gapi.client.load('plus', 'v1',function(){});
 }
  
