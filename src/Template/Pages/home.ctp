@@ -9,7 +9,7 @@
                             <li role="presentation" class="active"><a href="#collections" aria-controls="collections" role="tab" data-toggle="tab">Collections</a></li>
                             <li role="presentation"><a href="#featured" aria-controls="featured" role="tab" data-toggle="tab">Featured in</a></li>
                             <li role="presentation"><a href="#hotdeals" aria-controls="hotdeals" role="tab" data-toggle="tab">Hot Deals</a></li>
-                            <li role="presentation" ><a href="#latest" aria-controls="Latest" role="tab" data-toggle="tab">Latest</a></li>
+                            <li role="presentation"><a href="#latest" aria-controls="Latest" role="tab" data-toggle="tab">Latest</a></li>
                         </ul>
                     </div>
                 </div>
@@ -19,29 +19,29 @@
                             <li class="col-md-4 col-sm-4 col-xs-8">
                                 <div class="hots-pro">
                                     <h3><a href="articles/view/2">9 Shopping Tips to find the Perfect Bridal Lehenga in Chandni Chowk</a></h3>
-                                    <a href="#"><img src="/images/pro-img1.jpg" alt="" /></a>
-                                    <div class="product-info"> <span class="circle"></span> <span class="title">Hariprasad</span> </div>
+                                    <a href="/users/profile/2"><img src="/images/pro-img1.jpg" alt="" /></a>
+                                    <div class="product-info"> <span class="circle"></span> <a href="/users/profile/2"><span class="title">Hariprasad</span></a> </div>
                                 </div>
                             </li>
                             <li class="col-md-4 col-sm-4 col-xs-8">
                                 <div class="hots-pro">
                                     <h3><a href="articles/view/2">Shopping in Sarojini</a></h3>
                                     <a href="#"><img src="/images/pro-img2.jpg" alt="" /></a>
-                                    <div class="product-info"> <span class="circle"></span> <span class="title">Hariprasad</span> </div>
+                                    <div class="product-info"> <span class="circle"></span> <a href="/users/profile/2"><span class="title">Hariprasad</span></a> </div>
                                 </div>
                             </li>
                             <li class="col-md-4 col-sm-4 col-xs-8">
                                 <div class="hots-pro">
                                     <h3><a href="articles/view/2">Shopping in Sarojini</a></h3>
                                     <a href="#"><img src="/images/pro-img2.jpg" alt="" /></a>
-                                    <div class="product-info"> <span class="circle"></span> <span class="title">Hariprasad</span> </div>
+                                    <div class="product-info"> <span class="circle"></span><a href="/users/profile/2"><span class="title">Hariprasad</span></a></div>
                                 </div>
                             </li>
                             <li class="col-md-4 col-sm-4 col-xs-8">
                                 <div class="hots-pro">
                                     <h3><a href="articles/view/2">Shopping in Sarojini</a></h3>
                                     <a href="#"><img src="/images/pro-img2.jpg" alt="" /></a>
-                                    <div class="product-info"> <span class="circle"></span> <span class="title">Hariprasad</span> </div>
+                                    <div class="product-info"> <span class="circle"></span><a href="/users/profile/2"><span class="title">Hariprasad</span></a></div>
                                 </div>
                             </li>
                         </ul>

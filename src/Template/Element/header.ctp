@@ -6,7 +6,7 @@
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed click_event_menu" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a href="#" class="header-share-img visible-xs"><img src="/images/share-img.png" alt="" /></a> <a class="logo" href="#"> <img src="/images/logo.png" alt="logo" /></a> </div>
+            <a href="#" class="header-share-img visible-xs"><img src="/images/share-img.png" alt="" /></a> <a class="logo" href="/"> <img src="/images/logo.png" alt="logo" /></a> </div>
           <div class="header-margin hidden">
             <div class="header-search-main">
               <div class="header-search">
@@ -309,7 +309,7 @@
             <a href="#" class="header-share-img visible-xs">
                 <img src="/images/share-img.png" alt="" />
             </a> 
-            <a class="logo" href="#"> 
+            <a class="logo" href="/"> 
                 <img src="/images/logo.png" alt="logo" alt="" />
             </a> 
           </div>

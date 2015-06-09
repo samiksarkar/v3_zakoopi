@@ -10,6 +10,17 @@ use App\Controller\AppController;
  */
 class StoresController extends AppController
 {
+    
+    /**
+     * beforeFilter method
+     *
+     * @define 
+    */
+     public function beforeFilter(\Cake\Event\Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow('view');
+    }
 
     /**
      * Index method

@@ -11,7 +11,15 @@ use App\Controller\AppController;
 class UsersController extends AppController
 {
 
-    
+    /**
+     * beforeFilter method
+     *
+     * @define 
+    */
+    public function beforeFilter(\Cake\Event\Event $event){
+        parent::beforeFilter($event);
+        $this->Auth->allow('profile');
+    }
     
     public function login(){
         $this->layout = 'login';
@@ -130,5 +138,24 @@ class UsersController extends AppController
             $this->Flash->error('The user could not be deleted. Please, try again.');
         }
         return $this->redirect(['action' => 'index']);
+    }
+    
+      /**
+     * User Profile 
+     *
+     * @param string|null $slug User name slug.
+     * @return void Redirects to index.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function profile($slug = null)
+    {
+//        $this->request->allowMethod(['post', 'delete']);
+//        $user = $this->Users->get($id);
+//        if ($this->Users->delete($user)) {
+//            $this->Flash->success('The user has been deleted.');
+//        } else {
+//            $this->Flash->error('The user could not be deleted. Please, try again.');
+//        }
+//        return $this->redirect(['action' => 'index']);
     }
 }
