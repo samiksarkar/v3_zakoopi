@@ -440,6 +440,7 @@ function login()
  
 function loginCallback(result)
 {
+    console.log(result);
     if(result['status']['signed_in'])
     {
         var request = gapi.client.plus.people.get(
@@ -474,7 +475,7 @@ function loginCallback(result)
 }
 function onLoadCallback()
 {
-    gapi.client.setApiKey('PUT_YOUR_KEY');
+    gapi.client.setApiKey('216585866753-jemq010jlqbs60g144j3sv7juis4olm0.apps.googleusercontent.com');
     gapi.client.load('plus', 'v1',function(){});
 }
  
