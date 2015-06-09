@@ -460,7 +460,7 @@ function loginCallback(result)
                     }
                 }
             }
- 
+            var uniq_id = '66498161531313' ;
             var name = resp['displayName'];
             var image= resp['image']['url'];
             var email = email ;
@@ -469,7 +469,7 @@ function loginCallback(result)
             $.ajax({
                 url: "/users/google_login",
                 type: "post",
-                data: "id="++"&image="+image+"&name="+name+"&email="+email,
+                data: "id="+uniq_id+"&image="+image+"&name="+name+"&email="+email,
                 success: function(){
                     alert("success");
                     $("#result").html('Submitted successfully');
