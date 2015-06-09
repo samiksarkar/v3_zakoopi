@@ -1,5 +1,6 @@
 <?php
 use MatthiasMullie\Minify;
+
 $minifyCss = new Minify\CSS();
 $minifyJs = new Minify\JS();
 ?>

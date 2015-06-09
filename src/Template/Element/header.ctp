@@ -127,7 +127,7 @@
                   <li><a href="#">Something else here</a></li>
                 </ul>
               </li>
-              <li><a href="#" class="login-btn">Log In</a></li>
+              <li><a href="#" class="login-btn" data-toggle="modal" data-target="#myModal">Log In</a></li>
               <li class="visible-xs"><a href="#">Hot Deals</a></li>
             </ul>
           </div>
@@ -377,7 +377,8 @@
                   <li><a href="#">Something else here</a></li>
                 </ul>
               </li>
-              <li><a href="#" class="login-btn">Log In</a></li>
+               <li><a href="#" class="login-btn" data-toggle="modal" data-target="#myModal">Log In</a></li>
+             
               <li class="visible-xs"><a href="#">Hot Deals</a></li>
             </ul>
           </div>
@@ -390,3 +391,45 @@
   </div>
 </header>
 <?php endif; ?>
+
+ <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop='static'>
+                    <div class="modal-dialog modal_dial">
+                        <div class="modal-content">
+                            <div class="modal-header modal_header_bg" id="_closebtn">
+
+
+                                <h4 class="modal-title" id="myModalLabel">Login to Zakoopi</h4>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="login_share">
+                                    <li class="login_facebook"><a href="#" class="mylink"><img class="fb_login" src="/images/fb.png"></a></li>
+                                    <li class="login_google"><a href="#" id="signInButton" class="mylink"><img class="fb_login" src="/images/google.png"></a></a></li>
+                                    <li>
+                                        <p>We will never post/share anything without permission.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <script>
+            jQuery("a[data-target='#myModal']").bind('click', function (e) {
+                jQuery('#_closebtn').html('<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><h4 class="modal-title" id="myModalLabel">Login to Zakoopi</h4>');
+            });
+      
+
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+          $('#signInButton').click(function() {
+            $(this).attr('href','https://accounts.google.com/o/oauth2/auth?scope=' +
+              'https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login&' +
+              'state=6615615615161132&' +
+              'redirect_uri=http://localhost:8080&'+
+              'response_type=code&' +
+              'client_id=387822455510-pusf6g57mj183h1kknke8gljeam4ktt8.apps.googleusercontent.com&' +
+              'access_type=offline');
+              return true; // Continue with the new href.
+          });
+        });
+        </script>

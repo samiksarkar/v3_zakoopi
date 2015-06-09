@@ -3527,3 +3527,12 @@ a.download-btn:hover {
 	background:#5fc6c1;
 	color:#fff;
 }
+
+ul.login_share {
+    padding: 0;
+}
+ul.login_share li {
+    list-style: outside none none;
+    margin: 20px 0;
+    text-align: center;
+}
