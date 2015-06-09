@@ -403,7 +403,7 @@
                             <div class="modal-body">
                                 <ul class="login_share">
                                     <li class="login_facebook"><a href="#" class="mylink"><img class="fb_login" src="/images/fb.png"></a></li>
-                                    <li class="login_google"><a href="#" id="signInButton" class="mylink"><img class="fb_login" src="/images/google.png"></a></a></li>
+                                    <li class="login_google"><a href="#" onclick="login();" id="signInButton" class="mylink"><img class="fb_login" src="/images/google.png"></a></a></li>
                                     <li>
                                         <p>We will never post/share anything without permission.</p>
                                     </li>
@@ -419,17 +419,72 @@
       
 
         </script>
-        <script type="text/javascript">
-        $(document).ready(function() {
-          $('#signInButton').click(function() {
-            $(this).attr('href','https://accounts.google.com/o/oauth2/auth?scope=' +
-              'https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login&' +
-              'state=6615615615161132&' +
-              'redirect_uri=http://localhost:8080&'+
-              'response_type=code&' +
-              'client_id=387822455510-pusf6g57mj183h1kknke8gljeam4ktt8.apps.googleusercontent.com&' +
-              'access_type=offline');
-              return true; // Continue with the new href.
-          });
+<script type="text/javascript">
+ 
+function logout()
+{
+    gapi.auth.signOut();
+    location.reload();
+}
+function login() 
+{
+  var myParams = {
+    'clientid' : '216585866753-jemq010jlqbs60g144j3sv7juis4olm0.apps.googleusercontent.com',
+    'cookiepolicy' : 'single_host_origin',
+    'callback' : 'loginCallback',
+    'approvalprompt':'force',
+    'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
+  };
+  gapi.auth.signIn(myParams);
+}
+ 
+function loginCallback(result)
+{
+    if(result['status']['signed_in'])
+    {
+        var request = gapi.client.plus.people.get(
+        {
+            'userId': 'me'
         });
-        </script>
+        request.execute(function (resp)
+        {
+            var email = '';
+            if(resp['emails'])
+            {
+                for(i = 0; i < resp['emails'].length; i++)
+                {
+                    if(resp['emails'][i]['type'] == 'account')
+                    {
+                        email = resp['emails'][i]['value'];
+                    }
+                }
+            }
+ 
+            var str = "Name:" + resp['displayName'] + "<br>";
+            str += "Image:" + resp['image']['url'] + "<br>";
+            str += "<img src='" + resp['image']['url'] + "' /><br>";
+ 
+            str += "URL:" + resp['url'] + "<br>";
+            str += "Email:" + email + "<br>";
+            document.getElementById("profile").innerHTML = str;
+        });
+ 
+    }
+ 
+}
+function onLoadCallback()
+{
+    gapi.client.setApiKey('PUT_YOUR_KEY');
+    gapi.client.load('plus', 'v1',function(){});
+}
+ 
+    </script>
+ 
+<script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client.js?onload=onLoadCallback';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+</script>
+ 
