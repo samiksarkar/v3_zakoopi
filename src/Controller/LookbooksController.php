@@ -12,6 +12,17 @@ class LookbooksController extends AppController
 {
 
     /**
+     * beforeFilter method
+     *
+     * @define 
+    */
+     public function beforeFilter(\Cake\Event\Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow('view');
+    }
+    
+    /**
      * Index method
      *
      * @return void
@@ -34,11 +45,11 @@ class LookbooksController extends AppController
      */
     public function view($id = null)
     {
-        $lookbook = $this->Lookbooks->get($id, [
-            'contain' => ['Users', 'Cards', 'Lookbookcomments', 'Lookbooklikes']
-        ]);
-        $this->set('lookbook', $lookbook);
-        $this->set('_serialize', ['lookbook']);
+//        $lookbook = $this->Lookbooks->get($id, [
+//            'contain' => ['Users', 'Cards', 'Lookbookcomments', 'Lookbooklikes']
+//        ]);
+//        $this->set('lookbook', $lookbook);
+//        $this->set('_serialize', ['lookbook']);
     }
 
     /**
