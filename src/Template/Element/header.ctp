@@ -440,6 +440,8 @@ function login()
  
 function loginCallback(result)
 {
+    alert('login');
+    alert(result);
     console.log(result);
     if(result['status']['signed_in'])
     {
