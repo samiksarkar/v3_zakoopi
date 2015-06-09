@@ -469,7 +469,8 @@ function loginCallback(result)
  
             str += "URL:" + resp['url'] + "<br>";
             str += "Email:" + email + "<br>";
-            document.getElementById("profile").innerHTML = str;
+            console.log(str);
+            //document.getElementById("profile").innerHTML = str;
         });
  
     }
