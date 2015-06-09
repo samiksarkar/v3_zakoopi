@@ -24,9 +24,11 @@ $minifyJs = new Minify\JS();
             $minifyCss->minify(WWW_ROOT . 'css_cache'.DS.'bundleOne.css');
             echo $this->Html->css('/css_cache/bundleOne.css');
         }else{
-            echo $this->Html->css('bootstrap.min.css');
-            echo $this->Html->css('style.css');
-            echo $this->Html->css('media.css');
+            echo $this->Html->css([
+                    'bootstrap.min.css',
+                    'style.css',
+                    'media.css'
+                ]);
         }
         
         // This is for the minify js
@@ -40,13 +42,16 @@ $minifyJs = new Minify\JS();
                     
             );
             $minifyJs->minify(WWW_ROOT . 'js_cache'.DS.'bundleOne.js');
-            echo $this->Html->script('/js_cache/bundleOne.js');
+            echo $this->Html->script(['/js_cache/bundleOne.js','jquery.pjax']);
         }else{
-            echo $this->Html->script('bootstrap.min.js');
-            echo $this->Html->script('imagesloaded.3.1.8.min.js');
-            echo $this->Html->script('jquery.masonry.3.2.1.min.js');
-            echo $this->Html->script('base.js');
-            echo $this->Html->script('jquery.bxslider.js');
+            echo $this->Html->script([
+                    'bootstrap.min.js',
+                    'imagesloaded.3.1.8.min.js',
+                    'jquery.masonry.3.2.1.min.js',
+                    'base.js',
+                    'jquery.bxslider.js',
+                    'jquery.pjax'
+                ]);
            
         }
         ?>
@@ -74,7 +79,7 @@ $minifyJs = new Minify\JS();
             var zakoopiApp = {};
         </script>
     </head>
-    <body>
+    <body id="pjax-container">
         <div>
             <?= $this->Flash->render() ?>
         </div>
@@ -108,7 +113,16 @@ $minifyJs = new Minify\JS();
         </div>
         
         
-      
+        <div style="position: fixed; z-index: 100000; background: rgba(40,40,40,0.7); top: 0; left: 0; display: none;" id="page-loader">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <center>
+                <img src="<?php echo \Cake\Routing\Router::url('/bar_loader.gif'); ?>" />
+            </center>
+        </div>
         <script>
             $(document).ready(function () {
                 $('.left-filter #dLabel, .filter_close').click(function () {
@@ -145,6 +159,21 @@ $minifyJs = new Minify\JS();
             $(".download-btn").click(function(){
                 $("ul.app-box").slideToggle();
             }); 
+            
+            $(document).pjax("a", '#pjax-container');
+
+            $('#page-loader').height($(window).height());
+            $('#page-loader').width($(window).width());
+            $(document).on('pjax:send', function () {
+                $('#page-loader').show();
+            });
+            $(document).on('pjax:complete', function () {
+                $('#page-loader').hide();
+            });
+            $(document).on('pjax:error', function (xhr, status, e) {
+                $("#notifxi").notifxi('q', 'Opps! it seems a slow connection...', 'warn');
+            });
+            
         </script>
        
     </body>

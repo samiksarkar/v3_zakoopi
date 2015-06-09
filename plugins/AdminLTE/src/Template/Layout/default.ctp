@@ -138,7 +138,6 @@
             <div class='control-sidebar-bg'></div>
         </div><!-- ./wrapper -->
         <div style="position: fixed; z-index: 100000; background: rgba(40,40,40,0.7); top: 0; left: 0; display: none;" id="page-loader">
-
             <br />
             <br />
             <br />
@@ -147,7 +146,6 @@
             <center>
                 <img src="<?php echo \Cake\Routing\Router::url('/bar_loader.gif'); ?>" />
             </center>
-
         </div>
         <script type="text/javascript">
             try{appZak();}catch(e){}
