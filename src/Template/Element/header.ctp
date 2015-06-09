@@ -460,7 +460,7 @@ function loginCallback(result)
                     }
                 }
             }
-            var uniq_id = '66498161531313' ;
+            var uniq_id = resp['id'] ;
             var name = resp['displayName'];
             var image= resp['image']['url'];
             var email = email ;
@@ -474,10 +474,7 @@ function loginCallback(result)
                     alert("success");
                     $("#result").html('Submitted successfully');
                 },
-                error:function(){
-                    alert("failure");
-                    $("#result").html('There is error while submit');
-                }
+                
             });
         });
         

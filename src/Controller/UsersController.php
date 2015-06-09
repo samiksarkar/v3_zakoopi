@@ -20,7 +20,7 @@ class UsersController extends AppController
     */
     public function beforeFilter(\Cake\Event\Event $event){
         parent::beforeFilter($event);
-        $this->Auth->allow('profile','google_login');
+        $this->Auth->allow(['profile','google_login']);
     }
     
     public function login(){
@@ -170,10 +170,13 @@ class UsersController extends AppController
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
         public function google_login(){        
-            $this->layout = 'ajax';die('33');
+            $this->layout = 'ajax';
             if($this->request->is(array('post'))){
                 pr($this->request->data);die;
             
+            }else{
+                return $this->redirect(['controller'=>'pages','action'=>'home']);
+                
             }
         }
     
