@@ -461,19 +461,34 @@ function loginCallback(result)
                 }
             }
  
-            var str = "Name:" + resp['displayName'] + "<br>";
-            str += "Image:" + resp['image']['url'] + "<br>";
-            str += "<img src='" + resp['image']['url'] + "' /><br>";
- 
-            str += "URL:" + resp['url'] + "<br>";
-            str += "Email:" + email + "<br>";
-            console.log(str);
-            //document.getElementById("profile").innerHTML = str;
+            var name = resp['displayName'];
+            var image= resp['image']['url'];
+            var email = email ;
+            console.log(result);
+            
+            $.ajax({
+                url: "/users/google_login",
+                type: "post",
+                data: "id="++"&image="+image+"&name="+name+"&email="+email,
+                success: function(){
+                    alert("success");
+                    $("#result").html('Submitted successfully');
+                },
+                error:function(){
+                    alert("failure");
+                    $("#result").html('There is error while submit');
+                }
+            });
         });
+        
+        
  
     }
  
 }
+
+ 
+
 function onLoadCallback()
 {
     gapi.client.setApiKey(null);
