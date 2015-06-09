@@ -171,8 +171,10 @@ class UsersController extends AppController
      */
         public function google_login(){        
             $this->layout = 'ajax';
+            $users = \Cake\ORM\TableRegistry::get('Users');
             if($this->request->is(array('post'))){
-                pr($this->request->data);die;
+                $user_exists= $users->find()->where(['uid' => $this->request->data['id']])->toArray();
+            pr($user_exists);die;
             
             }else{
                 return $this->redirect(['controller'=>'pages','action'=>'home']);
