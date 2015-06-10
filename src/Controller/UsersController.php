@@ -175,7 +175,7 @@ class UsersController extends AppController
             $user_new = $this->Users->newEntity();
             if($this->request->is(array('post'))){
               //  $user_new = $this->Users->patchEntity($user_new, $this->request->data);
-                debug($this->request->data);exit;
+                debug([$this->request->data]);exit;
               //  $user_exists= $users->find()->where(['uid' => $this->request->data['id']])->toArray();
                // debug($user_exists);
                // exit;
