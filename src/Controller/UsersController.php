@@ -174,7 +174,7 @@ class UsersController extends AppController
             $users = \Cake\ORM\TableRegistry::get('Users');
             if($this->request->is(array('post'))){
                 $user_exists= $users->find()->where(['uid' => $this->request->data['id']])->toArray();
-            debug($user_exists);exit;
+            debug($this->request->data['id']);exit;
             
             }else{
                 return $this->redirect(['controller'=>'pages','action'=>'home']);
