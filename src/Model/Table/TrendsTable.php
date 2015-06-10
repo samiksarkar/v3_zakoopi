@@ -35,7 +35,7 @@ class TrendsTable extends Table
                         '80x0' => [80, 0],
                     ],
                     'dirPattern' => "{WWW_ROOT}uploads{DS}trends{DS}", // http://v3.zakoopi.com/uploads/markets/ + name + -size.jpg
-                    'slugColumn' => "trend_name"
+                    'slugColumns' => ["trend_name",'city_id']
                 ]
             ]
         ]);

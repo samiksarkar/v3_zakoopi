@@ -47,11 +47,11 @@ class ArticlesController extends AppController
     public function view($id = null)
     {
         
-//        $article = $this->Articles->get($id, [
-//            'contain' => ['Cities', 'ArticleHits', 'ArticleImages', 'ArticleStores']
-//        ]);
-//        $this->set('article', $article);
-//        $this->set('_serialize', ['article']);
+        $article = $this->Articles->get($id, [
+            'contain' => ['Cities', 'ArticleHits', 'ArticleImages', 'ArticleStores']
+        ]);
+        $this->set('article', $article);
+        $this->set('_serialize', ['article']);
     }
 
     /**

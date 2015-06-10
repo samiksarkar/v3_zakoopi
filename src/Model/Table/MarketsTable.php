@@ -34,7 +34,7 @@ class MarketsTable extends Table {
                         '40x0' => [40, 0],
                     ],
                     'dirPattern' => "{WWW_ROOT}uploads{DS}markets{DS}", // http://v3.zakoopi.com/uploads/markets/ + name + -size.jpg
-                    'slugColumn' => "market_name"
+                    'slugColumns' => ['market_name']
                 ]
             ]
         ]);

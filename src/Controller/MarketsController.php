@@ -11,7 +11,28 @@ use App\Controller\AppController;
 class MarketsController extends AppController
 {
 
-    /**
+    
+    public function getFromStores(){
+        $stores = \Cake\ORM\TableRegistry::get('Stores');
+        $marketList = $stores->find()->select()->distinct(['market'])->toArray();
+        foreach($marketList as $m){
+            $mrk = [
+                'market_name' => $m->market,
+                'city_id' => $m->city_id,
+                'created' => time()
+            ];
+            $markets = \Cake\ORM\TableRegistry::get('Markets');
+            $market = $markets->newEntity($mrk);
+            if ($markets->save($market)) {
+                pr($market);
+                
+            }
+            
+        }
+        exit;
+    }
+
+        /**
      * Index method
      *
      * @return void

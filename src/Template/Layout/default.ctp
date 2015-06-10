@@ -159,7 +159,7 @@ $minifyJs = new Minify\JS();
             $(".download-btn").click(function(){
                 $("ul.app-box").slideToggle();
             }); 
-            
+            $.pjax.defaults.timeout = 10000;
             $(document).pjax("a", '#pjax-container');
 
             $('#page-loader').height($(window).height());
@@ -171,7 +171,7 @@ $minifyJs = new Minify\JS();
                 $('#page-loader').hide();
             });
             $(document).on('pjax:error', function (xhr, status, e) {
-                $("#notifxi").notifxi('q', 'Opps! it seems a slow connection...', 'warn');
+//                $("#notifxi").notifxi('q', 'Opps! it seems a slow connection...', 'warn');
             });
             
         </script>

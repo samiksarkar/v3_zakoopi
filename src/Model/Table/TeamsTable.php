@@ -34,7 +34,7 @@ class TeamsTable extends Table
                         '40x0' => [40, 0],
                     ],
                     'dirPattern' => "{WWW_ROOT}uploads{DS}teams{DS}", // http://v3.zakoopi.com/uploads/teams/ + name + -size.jpg
-                    'slugColumn' => "title"
+                    'slugColumns' => ['title']
                 ]
             ]
         ]);

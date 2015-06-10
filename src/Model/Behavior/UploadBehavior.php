@@ -17,7 +17,7 @@ class UploadBehavior extends Behavior {
 //                '40x0' => [40, 0],
 //            ],
 //            'dirPattern' => "{WWW_ROOT}uploads{DS}markets{DS}", // http://v3.zakoopi.com/uploads/markets/ + name + -size.jpg
-//            'slugColumn' => "market_name"
+//            'slugColumns' => "market_name"
 //        ]
     ];
         
@@ -51,9 +51,21 @@ class UploadBehavior extends Behavior {
     }
 
     private function _buildSlug(\Cake\ORM\Entity $entity) {
-        $slugColumn = $this->config[$entity->source()]['slugColumn'];
-        $value = $entity->get($slugColumn);
-        $value = Inflector::slug($value);
+        if($entity->source() == "Trends"){
+            $tmps = \Cake\ORM\TableRegistry::get('Trends');
+            $entity = $tmps->find()->contain(['Cities'])->where(['Trends.id' => $entity->get('id')])->first();
+            $value = Inflector::slug($entity->trend_name . " " . $entity->city->city_name);
+            return strtolower($value);
+        }
+        
+        
+        
+        $slugColumns = $this->config[$entity->source()]['slugColumns'];
+        $str = "";
+        foreach($slugColumns as $t){
+            $str .= $entity->get($t)." ";
+        }
+        $value = Inflector::slug($str);
         return strtolower($value);
     }
 
