@@ -56,10 +56,17 @@ class User extends Entity
     }
     
     protected $_virtual = [
-        'android_api_img'
+        'android_api_img',
+        'name'
     ];
     protected function _getAndroidApiImg($img){
         return \Cake\Routing\Router::url('/uploads/profile_pics/'.$this->_properties['img'],true);
     }
     
+    protected function _setName($name){
+        $name = explode(" ", $name);
+        $this->set('first_name', ucwords($name[0]));
+        $this->set('last_name', ucwords($name[1]));
+        return ucwords($name);
+    }
 }
