@@ -163,7 +163,7 @@ class UsersController extends AppController
     
     
     /**
-     * User Social login 
+     * User Social login from Google
      *
      * @param string|null $slug User name slug.
      * @return void Redirects to index.
