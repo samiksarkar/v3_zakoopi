@@ -174,11 +174,19 @@ class UsersController extends AppController
             $users = \Cake\ORM\TableRegistry::get('Users');
             $user_new = $this->Users->newEntity();
             if($this->request->is(array('post'))){
-              //  $user_new = $this->Users->patchEntity($user_new, $this->request->data);
-                debug([$this->request->data]);exit;
-              //  $user_exists= $users->find()->where(['uid' => $this->request->data['id']])->toArray();
-               // debug($user_exists);
-               // exit;
+                
+                $user_new = $this->Users->patchEntity($user_new, $this->request->data);
+                debug($this->request->data);exit;
+                $user_exists= $users->find()->where(['uid' => $this->request->data['id']])->toArray();
+                
+                if (!empty($user_exists)) {
+                    $user = $this->Auth->identify();
+                    return $this->redirect($this->Auth->redirectUrl());
+                 
+                } else {
+                    $this->Users->save($user_exists);
+                    return $this->redirect($this->Auth->redirectUrl());
+                }
             
             }else{
                 return $this->redirect(['controller'=>'pages','action'=>'home']);
