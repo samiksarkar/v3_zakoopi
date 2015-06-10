@@ -162,7 +162,7 @@ class UsersController extends AppController
     }
     
     
-       /**
+    /**
      * User Social login 
      *
      * @param string|null $slug User name slug.
@@ -174,7 +174,7 @@ class UsersController extends AppController
             $users = \Cake\ORM\TableRegistry::get('Users');
             if($this->request->is(array('post'))){
                 $user_exists= $users->find()->where(['uid' => $this->request->data['id']])->toArray();
-            pr($user_exists);die;
+            debug($user_exists);exit;
             
             }else{
                 return $this->redirect(['controller'=>'pages','action'=>'home']);
