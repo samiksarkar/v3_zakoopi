@@ -172,9 +172,13 @@ class UsersController extends AppController
         public function google_login(){        
             $this->layout = 'ajax';
             $users = \Cake\ORM\TableRegistry::get('Users');
+            $user_new = $this->Users->newEntity();
             if($this->request->is(array('post'))){
+                debug($this->request->data);exit;
                 $user_exists= $users->find()->where(['uid' => $this->request->data['id']])->toArray();
-            debug($this->request->data['id']);exit;
+                $user_new = $this->Users->patchEntity($user_new, $this->request->data);
+                debug($user_exists);
+                exit;
             
             }else{
                 return $this->redirect(['controller'=>'pages','action'=>'home']);
