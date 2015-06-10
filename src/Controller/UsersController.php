@@ -179,7 +179,7 @@ class UsersController extends AppController
                 $this->request->data['first_name'] =$get_name[0];
                 $this->request->data['last_name'] =$get_name[1];
                 $user_new = $this->Users->patchEntity($user_new, $this->request->data);
-                $user_exists = $users->find()->where(['uid' => $d['uid']])->toArray();
+                $user_exists = $users->find()->where(['uid' => $this->request->data['uid']])->toArray();
                 
                 if (!empty($user_exists)) {  
                     $user = $this->Auth->identify();
